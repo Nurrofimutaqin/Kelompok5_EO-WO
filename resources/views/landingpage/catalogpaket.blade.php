@@ -6,14 +6,14 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Katalog</h2>
-          <p>Our Katalog</p>
+          <h2>Catalog</h2>
+          <p>Our Catalog</p>
         </div>
         <div class="row" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="menu-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter="#filter-salads">WO</li>
+              <li data-filter="#filter-wo">WO</li>
               <li data-filter=".filter-eo">EO</li>
             </ul>
           
