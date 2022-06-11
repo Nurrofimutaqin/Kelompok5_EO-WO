@@ -1,6 +1,6 @@
 @extends('landingpage.index')
 @section('content')
-
+@include('landingpage.hero')
   <!-- ======= Events Section ======= -->
     <section id="events" class="events">
       <div class="container" data-aos="fade-up">

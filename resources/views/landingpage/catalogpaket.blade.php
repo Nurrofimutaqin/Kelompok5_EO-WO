@@ -1,5 +1,6 @@
 @extends('landingpage.index')
 @section('content')
+@include('landingpage.hero')
     <!-- ======= Menu Section ======= -->
   <section id="menu chefs" class="menu bg-section chefs">
       <div class="container" data-aos="fade-up">

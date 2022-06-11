@@ -1,4 +1,3 @@
-
 @extends('landingpage.index')
 @section('content')
 <br>
@@ -20,13 +19,18 @@
                 <br>
               
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="name" id="name" placeholder="Your username" required>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="username" id="name" placeholder="Your Username" required>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="email" id="name" placeholder="Your Email" required>
               </div>
               <div class="form-group mt-3">
                 <input type="password" class="form-control" name="Password" id="Password" placeholder="Password" required>
               </div>
-              <div class="text-center mt-3"><button type="submit">LOGIN</button></div><br>
-              <div class="text-center">Not Registered? <a href="/regis">Create Your Account?</a></div>
+              <div class="text-center mt-3"><button type="submit">Regitrasi</button></div>
             </form>
 
           </div>

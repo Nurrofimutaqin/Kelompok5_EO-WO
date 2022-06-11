@@ -1,5 +1,6 @@
 @extends('landingpage.index')
 @section('content')
+@include('landingpage.hero')
     <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
