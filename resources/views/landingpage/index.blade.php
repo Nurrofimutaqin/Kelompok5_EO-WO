@@ -8,7 +8,7 @@
     <title>EO/WO Booking web</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-    @include('landingpage.landinglayout.css')
+    @include('landingpage.layoutlanding.css')
 </head>
 
 <body>
@@ -33,7 +33,7 @@
 
 
 
-    @include('landingpage.landinglayout.js')
+    @include('landingpage.layoutlanding.js')
 </body>
 
 </html>
