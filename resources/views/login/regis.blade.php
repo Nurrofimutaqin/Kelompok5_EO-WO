@@ -9,7 +9,7 @@
           
             <div class="col-lg-8" data-aos="zoom-in" data-aos-delay="100">
                 <div class="about-img">
-                <img src="assets/img/login.jpg" width="100%" alt="">
+                <img src="{{ url('assets_landingpage/img/login.jpg') }}" width="100%" alt="">
                 </div>
             </div>
           <div class="col-lg-4 mt-5 mt-lg-0">

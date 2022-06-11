@@ -37,3 +37,6 @@ Route::get('/login', function () {
 Route::get('/regis', function () {
     return view('login.regis');
 });
+Route::get('/homeadmin', function () {
+    return view('admin.home');
+});
