@@ -37,8 +37,8 @@ Route::get('/login', function () {
 Route::get('/regis', function () {
     return view('login.regis');
 });
-Route::get('/homeadmin', function () {
-    return view('admin.home');
+Route::get('/admin', function () {
+    return view('admin.index');
 });
 Route::get('/gallery', function () {
     return view('landingpage.gallery');
