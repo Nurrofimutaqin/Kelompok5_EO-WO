@@ -40,3 +40,6 @@ Route::get('/regis', function () {
 Route::get('/homeadmin', function () {
     return view('admin.home');
 });
+Route::get('/gallery', function () {
+    return view('landingpage.gallery');
+});
