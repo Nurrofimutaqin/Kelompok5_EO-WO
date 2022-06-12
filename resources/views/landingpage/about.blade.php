@@ -6,120 +6,95 @@
         <div class="container" data-aos="fade-up">
 
             <div class="row">
+                <div class="container" data-aos="fade-up">
+                    <div class="section-title">
+                        <p>Wedding Organizer Kelompok-5</p>
+                    </div>
+                </div>
                 <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="about-img">
-                        <img src="assets/img/about.jpg" alt="">
+                        <img src="assets_landingpage/img/about.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-                    <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+
                     <p class="fst-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore
-                        magna aliqua.
+                        Menjadi sangat dicintai oleh seseorang memberi anda kekuatan, Sementara mencintai seseorang secara
+                        mendalam memberi Anda keberanian
                     </p>
-                    <ul>
-                        <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.
-                        </li>
-                        <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                            aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat
-                            nulla pariatur.</li>
-                    </ul>
+
+                    <br>
+                    <h5>Tentang Kami</h5>
                     <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                        sunt in
-                        culpa qui officia deserunt mollit anim id est laborum
+                        Bali Top Wedding adalah badan penyelenggara pernikahan profesional berbasis di Bali. Di bawah badan
+                        hukum CV. Vinayaka Sukses Makmur (Nomor: 1272 / 22-09 / PK / XI / 2018), kami telah mulai membuka
+                        pintu kami secara legal pada tahun 2014.
+                        <br>
+                        Bergabung dengan organisasi profesional di Bali untuk pengusaha industri pernikahan yaitu (Bali
+                        Wedding Association) pada tahun 2016, dengan kemampuan kami untuk melakukan pernikahan internasional
+                        atau nasional telah diakui oleh sebagian besar tempat pernikahan dan vendor pernikahan di Bali.
+                        <br>
+                        ali Top Wedding Planner di dukung dengan anggota tim yang kreatif, bersemangat, dan berpengalaman.
+                        Tim kami dengan senang hati selalu membantu anda untuk menghilangkan stres dalam memilih tema
+                        pernikahan, tempat terbaik, atau lebih jauh untuk akhirnya memastikan acara yang akan selalu diingat
+                        untuk satu moment terindah anda
                     </p>
+                    <br>
+                    <h5>Pelayanan Kami</h5>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span>Perencanaan pernikahan penuh.</span><br>
+                            <p>Kami sepenuhnya membantu Anda sebelum, selama, dan setelah hari pernikahan Anda.</p>
+                        </li>
+                        <li><i class="bi bi-check-circle"></i> <span>Koordinator pernikahan.</span><br>
+                            <p>Bersikap profesional dalam berkoordinasi dengan vendor dan dalam menjalankan jadwal acara.
+                            </p>
+                        </li>
+                        <li><i class="bi bi-check-circle"></i> <span>Dekorasi Pernikahan</span><br>
+                            <p>Kami bekerja dan memberikan saran berdasarkan keinginan anda..</p>
+                        </li>
+                        <li><i class="bi bi-check-circle"></i> <span>Penyedia Bakat</span><br>
+                            <p>memerlukan MC bilingual ? atau ingin pertunjukan tari api? Ya, kami bisa menyediakan bakat
+                                itu</p>
+                        </li>
+                        <li><i class="bi bi-check-circle"></i> <span>Penyedia Dokumentasi</span><br>
+                            <p>Fotografer profesional dan videografer prefesional tersedia untuk mengabadikan momen indah
+                                Anda</p>
+                        </li>
+                    </ul>
+                    <br>
+
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="container" data-aos="fade-up">
+                    <div class="section-title">
+                        <p>Kesan dan Testimonial</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+
+                    <br>
+                    <h5 class="fst-italic"> Audi & Dara</h5>
+                    <p>
+                        Dear Bali Top Wedding,makasi banget kemarin pesta saya sukses sekali. Dekorasinya juga bagus.
+                        Wedding planning service pada saat saya wedding sangat memuaskan. Plannernya terutama mba Dewi dan
+                        Mba Aya sangat membantu dan baik banget. overall saya sangat suka service Bali top. Plannernya pada
+                        ramah2 dan servicenya sangat bagus. Saya bakal recommendasi ke beberapa bali wedding group yg saya
+                        ikutin dan post photo saya. Semoga sukses!
+                    </p>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="about-img">
+                        <img src="assets_landingpage/img/about.jpg" alt="">
+                    </div>
                 </div>
             </div>
 
         </div>
     </section><!-- End About Section -->
-    <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery">
 
-        <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Gallery</h2>
-                <p>Some photos from Our Restaurant</p>
-            </div>
-        </div>
-
-        <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row g-0">
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="gallery-item">
-                        <a href="assets/img/gallery/gallery-1.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                            <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="gallery-item">
-                        <a href="assets/img/gallery/gallery-2.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                            <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="gallery-item">
-                        <a href="assets/img/gallery/gallery-3.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                            <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="gallery-item">
-                        <a href="assets/img/gallery/gallery-4.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                            <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="gallery-item">
-                        <a href="assets/img/gallery/gallery-5.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                            <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="gallery-item">
-                        <a href="assets/img/gallery/gallery-6.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                            <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="gallery-item">
-                        <a href="assets/img/gallery/gallery-7.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                            <img src="assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4">
-                    <div class="gallery-item">
-                        <a href="assets/img/gallery/gallery-8.jpg" class="gallery-lightbox" data-gall="gallery-item">
-                            <img src="assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section><!-- End Gallery Section -->
 
     <!-- ======= Chefs Section ======= -->
     <section id="chefs" class="chefs">
@@ -134,7 +109,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="assets/img/chefs/chefs-1.jpg" class="img-fluid" alt="">
+                        <img src="assets_landingpage/img/chefs/chefs-1.jpg" class="img-fluid" alt="">
                         <div class="member-info">
                             <div class="member-info-content">
                                 <h4>Walter White</h4>
@@ -152,7 +127,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="member" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="assets/img/chefs/chefs-2.jpg" class="img-fluid" alt="">
+                        <img src="assets_landingpage/img/chefs/chefs-2.jpg" class="img-fluid" alt="">
                         <div class="member-info">
                             <div class="member-info-content">
                                 <h4>Sarah Jhonson</h4>
@@ -170,7 +145,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="assets/img/chefs/chefs-3.jpg" class="img-fluid" alt="">
+                        <img src="assets_landingpage/img/chefs/chefs-3.jpg" class="img-fluid" alt="">
                         <div class="member-info">
                             <div class="member-info-content">
                                 <h4>William Anderson</h4>
