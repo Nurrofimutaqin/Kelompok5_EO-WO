@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\TablePaketController;
 use App\Http\Controllers\landingpage\PaketController;
+use App\Http\Controllers\ImageUploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -58,3 +59,6 @@ Route::get('/admin', function () {
 
 // Route::get('/tabel-paket', [TablePaketController::class, 'index'])->name('tabelPaket');
 Route::resource('tabel-paket', TablePaketController::class);
+
+Route::get('image-upload', [ImageUploadController::class, 'imageUpload'])->name('image.upload');
+Route::post('image-upload', [ImageUploadController::class, 'imageUploadPost'])->name('image.upload.post');
