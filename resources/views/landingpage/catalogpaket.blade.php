@@ -12,7 +12,7 @@
 
             <div class="row">
                 @foreach ($dataPaket as $d)
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6 mb-5">
                         <div class="member" data-aos="zoom-in" data-aos-delay="100">
                             <img src="{{ asset('assets_landingpage/logopaket/' . $d->logo) }}" class="img-fluid"
                                 alt="">
@@ -23,11 +23,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                            <a href="" class="book-a-table-btn scrollto">Detail</a>
-                            <a href="{{ url('/detail-paket') }}" class="book-a-table-btn scrollto"><i
-                                    class="bi bi-arrow-right"></i></a>
-                        </div>
+                           <center><a href="" class="book-a-table-btn scrollto">Booking</a></center> 
                     </div>
                 @endforeach
             </div>
