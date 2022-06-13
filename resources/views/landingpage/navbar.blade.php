@@ -3,15 +3,8 @@
       <div class="container d-flex justify-content-center justify-content-md-between">
 
           <div class="contact-info d-flex align-items-center">
-              <i class="bi bi-phone d-flex align-items-center"><span>+1 5589 55488 55</span></i>
+              <i class="bi bi-phone d-flex align-items-center"><span>0856 9711 3324</span></i>
               <i class="bi bi-clock d-flex align-items-center ms-4"><span> Mon-Sat: 11AM - 23PM</span></i>
-          </div>
-
-          <div class="languages d-none d-md-flex align-items-center">
-              <ul>
-                  <li>En</li>
-                  <li><a href="#">De</a></li>
-              </ul>
           </div>
       </div>
   </div>
@@ -20,7 +13,7 @@
   <header id="header" class="fixed-top d-flex align-items-cente">
       <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-          <h1 class="logo me-auto me-lg-0"><a href="index.html">Blacksweet EO&WO</a></h1>
+          <h1 class="logo me-auto me-lg-0"><a href="{{ url('/') }}">Blacksweet EO&WO</a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -28,14 +21,14 @@
               <ul>
                   <li><a class="nav-link scrollto" href="{{ url('/home') }}">Home</a></li>
                   <li><a class="nav-link scrollto" href="{{ url('/about') }}">About</a></li>
-                  <li><a class="nav-link scrollto" href="{{ url('/catalogpaket') }}">Catalog</a></li>
+                  <li><a class="nav-link scrollto" href="{{ url('/catalog-paket') }}">Catalog</a></li>
                   <li><a class="nav-link scrollto" href="{{ url('/gallery') }}">Gallery Testimoni</a></li>
-                  <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+                  <li><a class="nav-link scrollto" href="{{ url('/contact') }}">Contact</a></li>
                   <li><a class="nav-link scrollto" href="{{ url('/login') }}">Login</a></li>
               </ul>
               <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
-          <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a>
+          <a href="{{ url('/booking') }}" class="book-a-table-btn scrollto d-none d-lg-flex">Booking</a>
 
       </div>
   </header><!-- End Header -->
