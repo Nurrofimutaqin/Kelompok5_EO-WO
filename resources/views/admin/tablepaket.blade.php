@@ -61,9 +61,9 @@
                                         <span class="d-none d-sm-block">Close</span>
                                     </button>
 
-                                    <button type="submit" name="proses" value="tambahpaket" class="btn btn-primary ml-1">
+                                    <button type="submit" value="tambahpaket" class="btn btn-primary ml-1">
                                         <i class="bx bx-check d-block d-sm-none"></i>
-                                        <span class="d-none d-sm-block">Accept</span>
+                                        <span class="d-none d-sm-block">Simpan</span>
                                     </button>
 
                                 </div>
@@ -160,7 +160,7 @@
                                                             <i class="bx bx-x d-block d-sm-none"></i>
                                                             <span class="d-none d-sm-block">Close</span>
                                                         </button>
-                                                        <button type="submit" name="proses" value="ubahpaket"
+                                                        <button type="submit" value="ubahpaket"
                                                             class="btn btn-primary ml-1">
                                                             <i class="bx bx-check d-block d-sm-none"></i>
                                                             <span class="d-none d-sm-block">Accept</span>
@@ -173,15 +173,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a class="btn btn-info" href="{{ route('tabel-paket.show', $d->id) }}">Show</a>
+
                                 <form method="POST" action="{{ route('tabel-paket.destroy', $d->id) }}">
-
-
-
                                     @csrf
                                     @method('DELETE')
 
-                                    <button class="btn btn-danger ml-1" type="submit" name="proses" value="hapuspaket"
+                                    <button class="btn btn-danger ml-1" type="submit" value="hapuspaket"
                                         onclick="return confirm('Anda Yakin Data dihapus?')">
                                         <i class="bx bx-check d-block d-sm-none"></i>
                                         <span class="d-none d-sm-block">Hapus</span>

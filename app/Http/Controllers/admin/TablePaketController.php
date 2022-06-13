@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Paket;
 use App\Models\TablePaket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +18,7 @@ class TablePaketController extends Controller
     public function index()
     {
         //
-        $tablePaket = DB::table('paket')->get();
+        $tablePaket = DB::table('paket')->orderBy('id', 'desc')->get();
         return view('admin.tablepaket', ['Paket' => $tablePaket]);
     }
 
@@ -83,7 +84,7 @@ class TablePaketController extends Controller
      * @param  \App\Models\TablePaket  $tablePaket
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TablePaket $tablePaket)
+    public function update(Request $request, $id)
     {
         //
         $request->validate([
@@ -91,8 +92,12 @@ class TablePaketController extends Controller
             'logo' => 'required',
         ]);
 
-        $tablePaket->update($request->all());
-
+        // $tablePaket->update($request->all());
+        $paket = Paket::findOrFail($id);
+        $paket->update([
+            'nama_paket' => $request->nama_paket,
+            'logo' => $request->logo,
+        ]);
         return redirect()->route('tabel-paket.index')
             ->with('success', 'Paket updated successfully');
     }
@@ -103,10 +108,10 @@ class TablePaketController extends Controller
      * @param  \App\Models\TablePaket  $tablePaket
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TablePaket $tablePaket)
+    public function destroy($id)
     {
-        //
-        $tablePaket->delete();
+        $paket = Paket::findOrFail($id);
+        $paket->delete();
 
         return redirect()->route('tabel-paket.index')
             ->with('success', 'Mahasiswa deleted successfully');

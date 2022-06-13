@@ -1,9 +1,13 @@
 <!-- ======= Gallery Section ======= -->
 @extends('landingpage.index')
 @section('content')
-    <section id="gallery" class="gallery mt-5">
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="gallery" class="gallery">
 
-        <div class="container mt-5" data-aos="fade-up">
+        <div class="container" data-aos="fade-up">
             <div class="section-title">
                 <h2>Gallery</h2>
                 <p>Some photos from Our Restaurant</p>

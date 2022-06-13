@@ -70,7 +70,7 @@
             <div class="row">
                 <div class="container" data-aos="fade-up">
                     <div class="section-title">
-                        <center><p>Kesan dan Testimonial</p></center>
+                        <p>Kesan dan Testimonial</p>
                     </div>
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
@@ -94,7 +94,6 @@
 
         </div>
     </section><!-- End About Section -->
-
 
 
     <!-- ======= Chefs Section ======= -->

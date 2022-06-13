@@ -47,12 +47,6 @@ Route::get('/login', function () {
 Route::get('/regis', function () {
     return view('login.regis');
 });
-<<<<<<< HEAD
-Route::get('/booking', function () {
-    return view('landingpage.booking');
-});
-=======
->>>>>>> 8750c442fa09e3f69684c3f4469fb55340215a76
 
 Route::get('/gallery', function () {
     return view('landingpage.gallery');
@@ -62,5 +56,5 @@ Route::get('/admin', function () {
     return view('admin.home');
 });
 
-Route::get('/tabel-paket', [TablePaketController::class, 'index'])->name('tabelPaket');
+// Route::get('/tabel-paket', [TablePaketController::class, 'index'])->name('tabelPaket');
 Route::resource('tabel-paket', TablePaketController::class);

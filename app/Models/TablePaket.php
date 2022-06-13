@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class TablePaket extends Model
 {
     use HasFactory;
-    use HasFactory;
     protected $table = 'paket';
     protected $fillable = [
         'nama_paket',
