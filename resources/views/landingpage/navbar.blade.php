@@ -28,7 +28,7 @@
               <ul>
                   <li><a class="nav-link scrollto" href="{{ url('/home') }}">Home</a></li>
                   <li><a class="nav-link scrollto" href="{{ url('/about') }}">About</a></li>
-                  <li><a class="nav-link scrollto" href="{{ url('/catalogpaket') }}">Catalog</a></li>
+                  <li><a class="nav-link scrollto" href="{{ url('/catalog-paket') }}">Catalog</a></li>
                   <li><a class="nav-link scrollto" href="{{ url('/gallery') }}">Gallery Testimoni</a></li>
                   <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
                   <li><a class="nav-link scrollto" href="{{ url('/login') }}">Login</a></li>

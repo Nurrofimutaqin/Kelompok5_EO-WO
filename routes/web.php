@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\landingpage\PaketController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,29 +17,35 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('landingpage.home');
 });
+
 Route::get('/home', function () {
     return view('landingpage.home');
 });
+
 Route::get('/about', function () {
     return view('landingpage.about');
 });
-Route::get('/detailpaket', function () {
+
+Route::get('/detail-paket', function () {
     return view('landingpage.detailpaket');
 });
-Route::get('/catalogpaket', function () {
-    return view('landingpage.catalogpaket');
-});
+
+// Route::get('/catalogpaket', function () {
+//     return view('landingpage.catalogpaket');
+// });
+Route::get('/catalog-paket', [PaketController::class, 'index'])->name('catalogPaket');
+
 Route::get('/contact', function () {
     return view('landingpage.contact');
 });
+
 Route::get('/login', function () {
     return view('login.login');
 });
+
 Route::get('/regis', function () {
     return view('login.regis');
 });
-
-
 
 Route::get('/gallery', function () {
     return view('landingpage.gallery');

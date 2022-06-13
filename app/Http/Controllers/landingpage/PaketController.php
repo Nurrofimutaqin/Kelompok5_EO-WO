@@ -16,6 +16,11 @@ class PaketController extends Controller
     public function index()
     {
         //
+        $data = Paket::all();
+
+        return view('landingpage.catalogpaket', [
+            'dataPaket' => $data,
+        ]);
     }
 
     /**
