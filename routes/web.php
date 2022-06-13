@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\TablePaketController;
 use App\Http\Controllers\landingpage\PaketController;
 use Illuminate\Support\Facades\Route;
 
@@ -55,6 +56,5 @@ Route::get('/admin', function () {
     return view('admin.home');
 });
 
-// Route::get('/homeadmin', function () {
-//     return view('admin.home');
-// });
+Route::get('/tabel-paket', [TablePaketController::class, 'index'])->name('tabelPaket');
+Route::resource('tabel-paket', TablePaketController::class);
