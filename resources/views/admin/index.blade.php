@@ -4,21 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Dashboard - Mazer Admin Dashboard</title>
+
     @include('admin.adminlayout.css')
 </head>
 
 <body>
-    @include('admin.sidebar')
+    <div id="app">
+        <div id="main">
+            @include('admin.sidebar')
 
-    <main id="main">
-        @include('admin.header')
-        @yield('content')
-    </main>
-    @include('admin.rightbar')
+            <div class="page-content">
+                @yield('content')
+            </div>
 
-    @include('admin.footer')
+            <footer>
+                @include('admin.footer')
+            </footer>
+        </div>
+    </div>
     @include('admin.adminlayout.js')
 </body>
 

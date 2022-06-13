@@ -37,9 +37,19 @@ Route::get('/login', function () {
 Route::get('/regis', function () {
     return view('login.regis');
 });
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 Route::get('/admin', function () {
     return view('admin.index');
 });
+>>>>>>> f696fa042df32825225386c20b14cb2645319b25
 Route::get('/gallery', function () {
     return view('landingpage.gallery');
+});
+
+Route::get('/homeadmin', function () {
+    return view('admin.home');
 });
