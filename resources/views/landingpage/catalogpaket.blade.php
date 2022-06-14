@@ -22,7 +22,8 @@
                                 </div>
                             </div>
                         </div>
-                        <center><a href="" class="book-a-table-btn scrollto">Booking</a></center>
+                        <center><a href="{{ route('paketDetail', $d->id) }}" class="book-a-table-btn scrollto">Booking</a>
+                        </center>
                     </div>
                 @endforeach
             </div>

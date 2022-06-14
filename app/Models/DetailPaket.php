@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class DetailPaket extends Model
 {
     use HasFactory;
+    protected $table = 'paket_detail';
+    protected $fillable = [
+        'nama_paketDetail',
+        'deskripsi',
+        'harga',
+        'foto',
+    ];
 }

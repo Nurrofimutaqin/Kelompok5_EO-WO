@@ -34,6 +34,7 @@
 
 
     @include('landingpage.layoutlanding.js')
+    @stack('script-custom')
 </body>
 
 </html>
