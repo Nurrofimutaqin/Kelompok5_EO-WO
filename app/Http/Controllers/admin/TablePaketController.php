@@ -44,13 +44,27 @@ class TablePaketController extends Controller
         //
         $request->validate([
             'nama_paket' => 'required',
-            'logo' => 'required',
+            'logo' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        TablePaket::create($request->all());
 
-        return redirect()->route('tabel-paket.index')
-            ->with('success', 'Paket created successfully.');
+        $filename = $request->logo->getClientOriginalName();
+
+        $logo = $request->logo->storeAs('logo-paket', $filename);
+
+
+        // TablePaket::create($request->all());
+        TablePaket::create([
+            'nama_paket' => $request->nama_paket,
+            'logo' => $logo,
+        ]);
+
+        // return redirect()->route('tabel-paket.index')
+        //     ->with('success', 'Paket created successfully.');
+
+        return back()
+            ->with('success', 'You have successfully upload image.')
+            ->with('image', $filename);
     }
 
     /**

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use phpDocumentor\Reflection\Types\Nullable;
 
 class CreatePaketTable extends Migration
 {
@@ -16,7 +17,7 @@ class CreatePaketTable extends Migration
         Schema::create('paket', function (Blueprint $table) {
             $table->id();
             $table->string('nama_paket', 30);
-            $table->string('logo', 100);
+            $table->string('logo', 100)->nullable();
             $table->timestamps();
         });
     }

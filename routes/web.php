@@ -1,8 +1,10 @@
 <?php
 
+// use App\Http\Controllers\admin\LoginController;
 use App\Http\Controllers\admin\TablePaketController;
 use App\Http\Controllers\landingpage\PaketController;
 use App\Http\Controllers\ImageUploadController;
+// use App\Http\Controllers\landingpage\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,18 +34,22 @@ Route::get('/detail-paket', function () {
     return view('landingpage.detailpaket');
 });
 
-// Route::get('/catalogpaket', function () {
-//     return view('landingpage.catalogpaket');
-// });
+
 Route::get('/catalog-paket', [PaketController::class, 'index'])->name('catalogPaket');
 
 Route::get('/contact', function () {
     return view('landingpage.contact');
 });
 
-Route::get('/login', function () {
-    return view('login.login');
-});
+// Route::get('/login', function () {
+//     return view('login.login');
+// });
+
+// Route::get('/login', [LoginController::class, 'login'])->name('login');
+// Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
+
+// Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
+// Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
 
 Route::get('/regis', function () {
     return view('login.regis');
@@ -57,8 +63,5 @@ Route::get('/admin', function () {
     return view('admin.home');
 });
 
-// Route::get('/tabel-paket', [TablePaketController::class, 'index'])->name('tabelPaket');
-Route::resource('tabel-paket', TablePaketController::class);
 
-Route::get('image-upload', [ImageUploadController::class, 'imageUpload'])->name('image.upload');
-Route::post('image-upload', [ImageUploadController::class, 'imageUploadPost'])->name('image.upload.post');
+Route::resource('tabel-paket', TablePaketController::class);

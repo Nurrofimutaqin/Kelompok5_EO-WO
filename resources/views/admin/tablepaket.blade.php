@@ -37,7 +37,7 @@
                                 </div>
                             @endif
 
-                            <form action="{{ route('tabel-paket.store') }}" method="POST">
+                            <form action="{{ route('tabel-paket.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="row">
@@ -50,8 +50,19 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group">
-                                            <strong>Logo:</strong>
-                                            <input type="text" name="logo" class="form-control" placeholder="Logo">
+                                            <label for="logo" class="form-label">Post Logo</label>
+                                            <input class="form-control @error('logo') is-invalid @enderror " type="file"
+                                                id="logo" name="logo">
+                                            @error('logo')
+                                                <div class="alert alert-danger">
+                                                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                                    <ul>
+                                                        @foreach ($errors->all() as $error)
+                                                            <li>{{ $error }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
