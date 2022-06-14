@@ -16,7 +16,7 @@ class AddImageFieldToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             //
             $table->enum('jenis_kelamin', ['laki-laki', 'perempuan']);
-            $table->text('alamat');
+            $table->text('alamat')->nullable();
             $table->enum('role', ['admin', 'petugas', 'pelanggan']);
         });
     }

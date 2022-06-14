@@ -31,11 +31,22 @@
                   <li><a class="nav-link scrollto" href="{{ url('/catalog-paket') }}">Catalog</a></li>
                   <li><a class="nav-link scrollto" href="{{ url('/gallery') }}">Gallery Testimoni</a></li>
                   <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
-                  <li><a class="nav-link scrollto" href="{{ url('/login') }}">Login</a></li>
+
+                  @if (empty(Auth::user()))
+                      <li><a class="nav-link scrollto" href="{{ route('landing-login') }}">Login</a></li>
+                      <li><a class="nav-link scrollto" href="{{ route('landing-register') }}">Register</a></li>
+                  @endif
               </ul>
               <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
-          <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a>
+          @if (!empty(Auth::user()))
+              <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"
+                  class="book-a-table-btn scrollto d-none d-lg-flex">Logout</a>
 
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+              </form>
+          @endif
       </div>
   </header><!-- End Header -->

@@ -21,14 +21,15 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+                @if (empty(Auth::user()) || Auth::user()->role == 'admin')
+                    <li class="sidebar-item ">
 
-                <li class="sidebar-item ">
-                    <a href="" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
-                        <span>Petugas</span>
-                    </a>
-                </li>
-
+                        <a href="" class='sidebar-link'>
+                            <i class="bi bi-grid-fill"></i>
+                            <span>Petugas</span>
+                        </a>
+                    </li>
+                @endif
                 <li class="sidebar-item ">
                     <a href="" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
@@ -48,10 +49,16 @@
                     </a>
                 </li>
                 <li class="sidebar-item ">
-                    <a href="" class='sidebar-link'>
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"
+                        class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Log Out</span>
                     </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </li>
 
 

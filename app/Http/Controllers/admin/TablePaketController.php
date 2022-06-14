@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Paket;
 use App\Models\TablePaket;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class TablePaketController extends Controller
@@ -19,7 +20,12 @@ class TablePaketController extends Controller
     {
         //
         $tablePaket = DB::table('paket')->orderBy('id', 'desc')->get();
-        return view('admin.tablepaket', ['Paket' => $tablePaket]);
+
+        if (empty(Auth::user()) || Auth::user()->role == 'pelanggan') {
+            return redirect()->route('beranda');
+        } else {
+            return view('admin.tablepaket', ['Paket' => $tablePaket]);
+        }
     }
 
     /**
