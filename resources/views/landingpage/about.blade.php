@@ -16,7 +16,7 @@
                         <img src="assets_landingpage/img/about.jpg" alt="">
                     </div>
                 </div>
-                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 content">
 
                     <p class="fst-italic">
                         Menjadi sangat dicintai oleh seseorang memberi anda kekuatan, Sementara mencintai seseorang secara
@@ -40,6 +40,9 @@
                         untuk satu moment terindah anda
                     </p>
                     <br>
+
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
                     <h5>Pelayanan Kami</h5>
                     <ul>
                         <li><i class="bi bi-check-circle"></i> <span>Perencanaan pernikahan penuh.</span><br>
@@ -67,42 +70,46 @@
 
 
             </div>
-            <div class="row">
-                <div class="container" data-aos="fade-up">
-                    <div class="section-title">
-                        <p>Kesan dan Testimonial</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
 
-                    <br>
-                    <h5 class="fst-italic"> Audi & Dara</h5>
-                    <p>
-                        Dear Bali Top Wedding,makasi banget kemarin pesta saya sukses sekali. Dekorasinya juga bagus.
-                        Wedding planning service pada saat saya wedding sangat memuaskan. Plannernya terutama mba Dewi dan
-                        Mba Aya sangat membantu dan baik banget. overall saya sangat suka service Bali top. Plannernya pada
-                        ramah2 dan servicenya sangat bagus. Saya bakal recommendasi ke beberapa bali wedding group yg saya
-                        ikutin dan post photo saya. Semoga sukses!
-                    </p>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="about-img">
-                        <img src="assets_landingpage/img/about.jpg" alt="">
-                    </div>
-                </div>
-            </div>
 
         </div>
     </section><!-- End About Section -->
+       <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="container" data-aos="fade-up">
+                        <div class="section-title">
+                            <h2>Testimonial</h2>
+                            <p>Kesan dan Testimonial</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
 
+                        <h5 class="fst-italic"> Audi & Dara</h5>
+                        <p>
+                            Dear Bali Top Wedding,makasi banget kemarin pesta saya sukses sekali. Dekorasinya juga bagus.
+                            Wedding planning service pada saat saya wedding sangat memuaskan. Plannernya terutama mba Dewi dan
+                            Mba Aya sangat membantu dan baik banget. overall saya sangat suka service Bali top. Plannernya pada
+                            ramah2 dan servicenya sangat bagus. Saya bakal recommendasi ke beberapa bali wedding group yg saya
+                            ikutin dan post photo saya. Semoga sukses!
+                        </p>
+                    </div>
+                    <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="about-img">
+                            <img src="assets_landingpage/img/about.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <!-- ======= Chefs Section ======= -->
     <section id="chefs" class="chefs">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Chefs</h2>
-                <p>Our Proffesional Chefs</p>
+                <h2>Owners</h2>
+                <p>Our Proffesional Owners</p>
             </div>
 
             <div class="row">
@@ -142,14 +149,13 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-md-6">
-                    <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="assets_landingpage/img/chefs/chefs-3.jpg" class="img-fluid" alt="">
+                    <div class="member" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="assets_landingpage/img/chefs/chefs-1.jpg" class="img-fluid" alt="">
                         <div class="member-info">
                             <div class="member-info-content">
-                                <h4>William Anderson</h4>
-                                <span>Cook</span>
+                                <h4>Walter White</h4>
+                                <span>Master Chef</span>
                             </div>
                             <div class="social">
                                 <a href=""><i class="bi bi-twitter"></i></a>
@@ -162,7 +168,42 @@
                 </div>
 
             </div>
-
+            <div class="row ">
+                <div class="col-lg-4 col-md-6">
+                    <div class="member" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="assets_landingpage/img/chefs/chefs-1.jpg" class="img-fluid" alt="">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Walter White</h4>
+                                <span>Master Chef</span>
+                            </div>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="member" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="assets_landingpage/img/chefs/chefs-1.jpg" class="img-fluid" alt="">
+                        <div class="member-info">
+                            <div class="member-info-content">
+                                <h4>Walter White</h4>
+                                <span>Master Chef</span>
+                            </div>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section><!-- End Chefs Section -->
 @endsection

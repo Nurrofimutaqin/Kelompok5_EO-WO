@@ -1,7 +1,7 @@
 @if (Request::is('catalog-paket'))
     <div class="col-lg-8">
         <h1>-----<span>Catalog</span>-----</h1>
-        <h2>Event & Wedding Organizer No.1 In The World!</h2>
+        <h2>Pick your Catalog!</h2>
 
         <div class="btns">
             <a href="#goto" class="btn-menu animated fadeInUp scrollto">Our Paket</a>
@@ -45,6 +45,11 @@
             <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Booking</a>
         </div>
     </div>
+    
+              <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in"
+                  data-aos-delay="200">
+                  <a href="https://www.youtube.com/watch?v=u6BOC7CDUTQ" class="glightbox play-btn"></a>
+              </div>
 @endif
 
 {{-- @if (Request::is('about'))

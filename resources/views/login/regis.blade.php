@@ -42,7 +42,7 @@
                                 required autocomplete="new-password" placeholder="re-password...">
 
                         </div>
-                        <div class="text-center mt-3"><button type="submit">Regitrasi</button></div>
+                         <div class="text-center mt-3"><button type="submit" class="btn btn-warning btn-block">Registrasi</button>
                     </form>
 
                 </div>

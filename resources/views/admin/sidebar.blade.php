@@ -31,9 +31,9 @@
                     </li>
                 @endif
                 <li class="sidebar-item ">
-                    <a href="" class='sidebar-link'>
+                    <a href="{{ url('/tabel-paketdetail') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
-                        <span>Customer</span>
+                        <span>Detail paket</span>
                     </a>
                 </li>
                 <li class="sidebar-item ">

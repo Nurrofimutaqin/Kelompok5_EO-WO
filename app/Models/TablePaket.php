@@ -13,4 +13,7 @@ class TablePaket extends Model
         'nama_paket',
         'logo',
     ];
+     public function detail(){
+        return $this->hasMany(DetailPaket::class);
+    }
 }

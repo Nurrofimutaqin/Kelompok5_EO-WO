@@ -4,6 +4,7 @@ namespace App\Http\Controllers\landingpage;
 
 use App\Http\Controllers\Controller;
 use App\Models\Paket;
+use App\Models\DetailPaket;
 use Illuminate\Http\Request;
 
 class PaketController extends Controller

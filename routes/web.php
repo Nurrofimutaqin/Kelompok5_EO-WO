@@ -3,6 +3,7 @@
 // use App\Http\Controllers\admin\LoginController;
 use App\Http\Controllers\admin\TablePaketController;
 use App\Http\Controllers\landingpage\PaketController;
+use App\Http\Controllers\landingpage\DetailPaketController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\MultiUser;
 // use Illuminate\Support\Facades\Auth;
@@ -34,7 +35,9 @@ Route::view('/login-register', 'login.regis')->name('landing-register');
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('tabel-paket', TablePaketController::class);
 });
-
+Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::resource('tabel-paketdetail', DetailPaketController::class);
+});
 Route::get('/home', function () {
     return view('landingpage.home');
 })->name('beranda');

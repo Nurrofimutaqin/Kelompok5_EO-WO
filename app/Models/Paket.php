@@ -13,4 +13,8 @@ class Paket extends Model
         'nama_paket',
         'logo',
     ];
+
+        public function detailpaket(){
+        return $this->hasMany(DetailPaket::class);
+    }
 }

@@ -50,27 +50,38 @@ class TablePaketController extends Controller
         //
         $request->validate([
             'nama_paket' => 'required',
-            'logo' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+        $input = $request->all();
+  
+        if ($image = $request->file('logo')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['logo'] = "$profileImage";
+        }
+    
+        TablePaket::create($input);
+     
+        return redirect()->route('tabel-paket.index')
+                        ->with('success','Product created successfully.');
 
+        //$filename = $request->logo->getClientOriginalName();
+        //$logo = $request->logo->storeAs('logo-paket', $filename);
 
-        $filename = $request->logo->getClientOriginalName();
-
-        $logo = $request->logo->storeAs('logo-paket', $filename);
 
 
         // TablePaket::create($request->all());
-        TablePaket::create([
-            'nama_paket' => $request->nama_paket,
-            'logo' => $logo,
-        ]);
+        //TablePaket::create([
+        //    'nama_paket' => $request->nama_paket,
+        //    'logo' => $logo,
+        //]);
+        /***  return redirect()->route('tabel-paket.index')
+             ->with('success', 'Paket created successfully.');
 
-        // return redirect()->route('tabel-paket.index')
-        //     ->with('success', 'Paket created successfully.');
-
-        return back()
+        /**return back()
             ->with('success', 'You have successfully upload image.')
-            ->with('image', $filename);
+            ->with('image', $filename);**/
     }
 
     /**
@@ -106,20 +117,48 @@ class TablePaketController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
         $request->validate([
+            'nama_paket' => 'required',
+            'logo' => 'required',
+        ]);
+  
+        $input = TablePaket::findOrFail($id);
+
+  
+        if ($image = $request->file('logo')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['logo'] = "$profileImage";
+        }else{
+            unset($input['logo']);
+        }
+        $input->update([
+            'nama_paket' => $request->nama_paket,
+            'logo' => $request->logo,
+        ]);
+          
+        //$tablePaket->update($input);
+    
+        return redirect()->route('tabel-paket.index')
+                        ->with('success','Product updated successfully');
+
+
+        //
+        /**$request->validate([
             'nama_paket' => 'required',
             'logo' => 'required',
         ]);
 
         // $tablePaket->update($request->all());
-        $paket = Paket::findOrFail($id);
+        $paket = TablePaket::findOrFail($id);
         $paket->update([
             'nama_paket' => $request->nama_paket,
             'logo' => $request->logo,
         ]);
         return redirect()->route('tabel-paket.index')
-            ->with('success', 'Paket updated successfully');
+            ->with('success', 'Paket updated successfully');**/
     }
 
     /**
@@ -130,7 +169,7 @@ class TablePaketController extends Controller
      */
     public function destroy($id)
     {
-        $paket = Paket::findOrFail($id);
+        $paket = TablePaket::findOrFail($id);
         $paket->delete();
 
         return redirect()->route('tabel-paket.index')
