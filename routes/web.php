@@ -5,8 +5,6 @@ use App\Http\Controllers\admin\TablePaketController;
 use App\Http\Controllers\landingpage\PaketController;
 use App\Http\Controllers\landingpage\DetailPaketController;
 use App\Http\Controllers\ImageUploadController;
-
->>>>>>> c95bec5ae1afb027a28ee6be1b160104badcdbe2
 use App\Http\Controllers\MultiUser;
 // use Illuminate\Support\Facades\Auth;
 // use App\Http\Controllers\landingpage\HomeController;
