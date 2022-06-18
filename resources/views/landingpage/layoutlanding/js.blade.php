@@ -8,3 +8,4 @@
 
 <!-- Template Main JS File -->
 <script src="{{ asset('assets_landingpage/js/main.js') }}"></script>
+<script src="{{ asset('assets_landingpage/js/jquery.min.js') }}"></script>

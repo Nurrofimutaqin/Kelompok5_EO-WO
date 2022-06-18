@@ -5,6 +5,8 @@ use App\Http\Controllers\admin\TablePaketController;
 use App\Http\Controllers\landingpage\PaketController;
 use App\Http\Controllers\landingpage\DetailPaketController;
 use App\Http\Controllers\ImageUploadController;
+
+>>>>>>> c95bec5ae1afb027a28ee6be1b160104badcdbe2
 use App\Http\Controllers\MultiUser;
 // use Illuminate\Support\Facades\Auth;
 // use App\Http\Controllers\landingpage\HomeController;
@@ -30,6 +32,12 @@ Auth::routes();
 Route::get('/', [MultiUser::class, 'index']);
 Route::view('/login-landing', 'login.login')->name('landing-login');
 Route::view('/login-register', 'login.regis')->name('landing-register');
+
+
+Route::get('/catalog-paket', [PaketController::class, 'index'])->name('catalogPaket');
+Route::get('/paket-detail/{id}', [DetailPaketController::class, 'index'])->name('paketDetail');
+Route::post('/detail', [DetailPaketController::class, 'show'])->name('getDetail');
+
 
 // ketika sudah login maka bisa mengakses fitur yang ada di dalam middleware
 Route::group(['middleware' => ['auth', 'verified']], function () {
