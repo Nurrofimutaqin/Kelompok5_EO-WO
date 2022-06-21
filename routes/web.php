@@ -4,7 +4,9 @@
 use App\Http\Controllers\admin\TablePaketController;
 use App\Http\Controllers\landingpage\PaketController;
 use App\Http\Controllers\landingpage\DetailPaketController;
+use App\Http\Controllers\landingpage\galleryPageController;
 use App\Http\Controllers\admin\GalleryController;
+use App\Http\Controllers\admin\tableDetailController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\MultiUser;
 // use Illuminate\Support\Facades\Auth;
@@ -34,6 +36,7 @@ Route::view('/login-register', 'login.regis')->name('landing-register');
 
 
 Route::get('/catalog-paket', [PaketController::class, 'index'])->name('catalogPaket');
+Route::get('/gallery', [galleryPageController::class, 'index'])->name('gallery');
 Route::get('/paket-detail/{id}', [DetailPaketController::class, 'index'])->name('paketDetail');
 Route::post('/detail', [DetailPaketController::class, 'show'])->name('getDetail');
 
@@ -43,7 +46,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('tabel-paket', TablePaketController::class);
 });
 Route::group(['middleware' => ['auth', 'verified']], function () {
-    Route::resource('tabel-paketdetail', DetailPaketController::class);
+    Route::resource('table-paketdetail', tableDetailController::class);
 });
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('table-gallery', GalleryController::class);
@@ -70,9 +73,6 @@ Route::get('/regis', function () {
     return view('login.regis');
 });
 
-Route::get('/gallery', function () {
-    return view('landingpage.gallery');
-});
 
 Route::get('/admin', function () {
     return view('admin.home');

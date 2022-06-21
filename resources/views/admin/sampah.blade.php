@@ -1,18 +1,6 @@
-@extends('admin.index')
-@section('content')
-    <div class="card">
-        <div class="card-header">
-            Paket
-        </div>
-        <div class="card-body">
-
-            <div class="modal-primary me-1 mb-1 d-inline-block">
+            <!--<div class="modal-primary me-1 mb-1 d-inline-block"> -->
                 <!-- Button trigger for primary themes modal -->
-                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#primary">
-                    + Tambah Paket
-                </button>
-
-                <!--primary theme Modal -->
+                                <!--primary theme Modal 
                 <div class="modal fade text-left" id="primary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160"
                     aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered " role="document">
@@ -43,16 +31,22 @@
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group mx-4 mt-3">
-                                            <strong>Nama Paket :</strong>
-                                            <input type="text" name="id_paket" class="form-control"
+                                            <strong>Nama Paket Detail :</strong>
+                                            <input type="text" name="nama_paketDetail" class="form-control"
                                                 placeholder="Nama Paket detail">
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group mx-4 mt-3">
                                             <strong>Nama Paket Detail :</strong>
-                                            <input type="text" name="nama_paketDetail" class="form-control"
-                                                placeholder="Nama Paket detail">
+                                            <select class="form-control" name="id_paket">
+                                                <option value="">-- Pilih paket--</option>
+                                                @foreach($Paket as $p)
+                                                <option value="{{ $p->id }}">{{ $p->nama_paket }}</option>
+                                                @endforeach
+                                                <input type="text" name="nama_paketDetail" class="form-control"
+                                                placeholder="Nama Paket">
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -72,7 +66,7 @@
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group mx-4 mb-3">
                                             <label for="foto" class="form-label"><strong>Post Logo:</strong></label>
-                                            <input class="form-control @error('foto') is-invalid @enderror " type="file"
+                                            <input class="form-control @error('foto') is-invalid @enderror " type="text"
                                                 id="foto" name="foto">
                                             @error('logo')
                                                 <div class="alert alert-danger">
@@ -103,38 +97,17 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
-            @if ($message = Session::get('success'))
-                <div class="alert alert-success">
-                    <p>{{ $message }}</p>
-                </div>
-            @endif
-            @php
-                $no = 1;
-            @endphp
-            <table class="table table-striped" id="table1">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Paket</th>
-                        <th>Nama Paket Detail</th>
-                        <th>Deskripsi</th>
-                        <th>harga</th>
-                        <th>Foto</th>
-                        <th>Opsi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($detail as $d)
-                        <tr>
-                            <td> {{ $no++ }} </td>
-                            <td> {{ $d->id_paket }} </td>
-                            <td> {{ $d->nama_paketDetail }} </td>
-                            <td> {{ $d->deskripsi }} </td>
-                            <td> {{ $d->harga }} </td>
-                            <td><img src="{{ asset('image/' . $d->foto) }}" class="img-thumbnail" alt="" style="height: 100px;"></td>
-                            <td>
+
+
+
+
+
+
+
+            <!-- modal update-->
+            
                                  <!--<div class="modal-primary me-1 mb-1 d-inline-block"> -->
                                     <!-- Button trigger for primary themes modal -->
                                     
@@ -167,7 +140,7 @@
                                                     </div>
                                                 @endif
 
-                                                <form action="{{ route('tabel-paket.update', $d->id) }}" method="POST">
+                                                <form action="{{ route('table-paket.update', $d->id) }}" method="POST">
                                                     @csrf
                                                     @method('PUT')
 
@@ -215,37 +188,17 @@
                                     </div>
                                 </div>  --> 
 
+
+
+
+
+
                                 
-                                <form method="POST" action="{{ route('table-paketdetail.destroy', $d->id) }}">
-                                    
-                                    @csrf
-                                    @method('DELETE')
-                                    <a href="{{ route('table-paketdetail.edit',$d->id) }}"type="button" class="btn btn-outline-primary" >Edit</a>
-                                    <button class="btn btn-danger ml-1 mt0" type="submit" onclick="return confirm('Anda Yakin Data diHapus???')">
-                                        <i class="bx bx-check d-block d-sm-none"></i>
-                                        <span class="d-none d-sm-block">Hapus</span>
-                                    </button>
-                                    <!--<div class="modal fade" id="hapus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                            <div class="modal-body">
-                                                Apakah anda ingin menghapus data ini?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="submit" value="hapuspaket" class="btn btn-danger">Hapus</button>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>-->
-                                </form>
-                                
-                                
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-    </div>
-@endsection
+                                            <!--<select class="form-control" name="id_paket">
+                                                <option value="">-- Pilih paket--</option>
+                                                @foreach($Paket as $p)
+                                                <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                                @endforeach
+                                                <input type="text" name="nama_paketDetail" class="form-control"
+                                                placeholder="Nama Paket">
+                                            </select>-->
