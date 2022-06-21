@@ -31,6 +31,12 @@
                     </li>
                 @endif
                 <li class="sidebar-item ">
+                    <a href="{{ url('/table-gallery') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Gallery</span>
+                    </a>
+                </li>
+                <li class="sidebar-item ">
                     <a href="{{ url('/tabel-paketdetail') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Detail paket</span>

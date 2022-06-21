@@ -102,10 +102,11 @@ class TablePaketController extends Controller
      * @param  \App\Models\TablePaket  $tablePaket
      * @return \Illuminate\Http\Response
      */
-    public function edit(TablePaket $tablePaket)
+    public function edit($id)
     {
         //
-        return view('admin.tablepaket#primaryedit', compact('paket'));
+        $paket = TablePaket::find($id);
+        return view('admin.editpaket', compact('paket'));
     }
 
     /**
@@ -120,7 +121,7 @@ class TablePaketController extends Controller
 
         $request->validate([
             'nama_paket' => 'required',
-            'logo' => 'required',
+            'logo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
   
         $input = TablePaket::findOrFail($id);

@@ -19,7 +19,7 @@
                         <div class="modal-content">
                             <div class="modal-header bg-primary">
                                 <h5 class="modal-title white" id="myModalLabel160">
-                                    Tambah Paket
+                                    Tambah Data Gallery
                                 </h5>
                                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                     <i data-feather="x"></i>
@@ -37,23 +37,23 @@
                                 </div>
                             @endif
 
-                            <form action="{{ route('tabel-paket.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('table-gallery.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group mx-4 mt-3">
-                                            <strong>Nama Paket :</strong>
-                                            <input type="text" name="nama_paket" class="form-control"
-                                                placeholder="Nama Paket">
+                                            <strong>Keterangan :</strong>
+                                            <input type="text" name="ket" class="form-control"
+                                                placeholder="Keterangan">
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group mx-4 mb-4">
-                                            <label for="logo" class="form-label"><strong>Post Logo:</strong></label>
-                                            <input class="form-control @error('logo') is-invalid @enderror " type="file"
-                                                id="logo" name="logo">
-                                            @error('logo')
+                                            <label for="gambar" class="form-label"><strong>Post gambar:</strong></label>
+                                            <input class="form-control @error('gambar') is-invalid @enderror " type="file"
+                                                id="gambar" name="gambar">
+                                            @error('gambar')
                                                 <div class="alert alert-danger">
                                                     <strong>Whoops!</strong> There were some problems with your input.<br><br>
                                                     <ul>
@@ -72,7 +72,7 @@
                                         <span class="d-none d-sm-block">Close</span>
                                     </button>
 
-                                    <button type="submit" value="tambahpaket" class="btn btn-primary ml-1">
+                                    <button type="submit" value="tambahgallery" class="btn btn-primary ml-1">
                                         <i class="bx bx-check d-block d-sm-none"></i>
                                         <span class="d-none d-sm-block">Simpan</span>
                                     </button>
@@ -96,47 +96,48 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Paket</th>
-                        <th>Logo</th>
+                        <th>Keterangan</th>
+                        <th>File</th>
                         <th>Foto</th>
                         <th>Opsi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($Paket as $d)
+                    @foreach ($Gallery as $g)
                         <tr>
                             <td> {{ $no++ }} </td>
-                            <td> {{ $d->nama_paket }} </td>
-                            <td> {{ $d->logo }} </td>
-                            <td><img src="{{ asset('image/' . $d->logo) }}" class="img-thumbnail" alt="" style="height: 100px;"></td>
+                            <td> {{ $g->ket }} </td>
+                            <td> {{ $g->gambar }} </td>
+                            <td><img src="{{ asset('image/' . $g->gambar) }}" class="img-thumbnail" alt="" style="height: 100px;"></td>
                             <td>
-                                    
+
                                 
-                                <form method="POST" action="{{ route('tabel-paket.destroy', $d->id) }}">
+                                <form method="POST" action="{{ route('table-gallery.destroy', $g->id) }}">
                                     @csrf
                                     @method('DELETE')
-                                    <a href="{{ route('tabel-paket.edit',$d->id) }}" type="button" class="btn btn-outline-primary" >
+                                    <a href="{{ route('table-gallery.edit',$g->id) }}"  class="btn btn-outline-primary" >
                                         Edit
                                     </a>
-                                    <button class="btn btn-danger ml-1" type="submit" onclick="return confirm('Anda Yakin Data diHapus???')" >
+                                    <button class="btn btn-danger ml-1" type="submit" 
+                                                onclick="return confirm('Anda Yakin Data diHapus???')">
                                         <i class="bx bx-check d-block d-sm-none"></i>
                                         <span class="d-none d-sm-block">Hapus</span>
                                     </button>
                                 
-                                <!--<div class="modal fade" id="hapus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                        <div class="modal-body">
-                                            Apakah anda ingin menghapus data ini?
+                               <!-- <div class="modal fade" id="hapus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                            <div class="modal-body">
+                                                Apakah anda ingin menghapus data ini?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" value="hapusgallery" class="btn btn-danger">Hapus</button>
+                                            </div>
+                                            </div>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" value="hapuspaket" class="btn btn-danger">Hapus</button>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>-->
-                                </form>
+                                    </div>-->
+                                </form> 
                             </td>
                         </tr>
                     @endforeach

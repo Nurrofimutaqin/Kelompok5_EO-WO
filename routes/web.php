@@ -4,6 +4,7 @@
 use App\Http\Controllers\admin\TablePaketController;
 use App\Http\Controllers\landingpage\PaketController;
 use App\Http\Controllers\landingpage\DetailPaketController;
+use App\Http\Controllers\admin\GalleryController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\MultiUser;
 // use Illuminate\Support\Facades\Auth;
@@ -43,6 +44,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 });
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('tabel-paketdetail', DetailPaketController::class);
+});
+Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::resource('table-gallery', GalleryController::class);
 });
 Route::get('/home', function () {
     return view('landingpage.home');
