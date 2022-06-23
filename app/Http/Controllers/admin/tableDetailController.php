@@ -54,7 +54,6 @@ class tableDetailController extends Controller
             'id_paket' => 'required',
             'nama_paketDetail' => 'required',
             'harga' => 'required',
-            'foto' => 'required',
             'deskripsi' => 'required',
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
@@ -93,6 +92,8 @@ class tableDetailController extends Controller
     public function edit($id)
     {
         //
+        $detail = DetailPaket::find($id);
+        return view('admin.editdetail',compact('detail'));
     }
 
     /**
@@ -115,12 +116,14 @@ class tableDetailController extends Controller
      */
     public function destroy($id)
     {
-        //
-        $detail = DetailPaket::findOrFail($id);
-        $detail->delete();
+        ////--------hapus dulu fisik file foto--------
+        $detail = DetailPaket::find($id);
 
-        return redirect()->route('table-paketdetail.index')
-            ->with('success', 'Gallery deleted successfully');
+        if(!empty($detail->logo)) unlink('image/'.$detail->logo);
+        //dd($ruangan); 
+        
+        $delete = TablePaket::where('id', $id)->delete();
+        return redirect()->back();
 
     }
 }

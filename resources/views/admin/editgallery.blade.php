@@ -25,7 +25,7 @@
                                         <div class="form-group">
                                             <label for="gambar" class="form-label"><strong>Post gambar:</strong></label>
                                             <input class="form-control @error('gambar') is-invalid @enderror " type="file"
-                                                id="gambar" name="gambar">
+                                                id="gambar" name="gambar" value="{{ $gallery->gambar }}">
                                             @error('gambar')
                                                 <div class="alert alert-danger">
                                                     <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -39,7 +39,7 @@
                                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary">Edit</button>
+                    <button type="submit" class="btn btn-primary" name="proses">Edit</button>
                     </div>
                 </div>
         

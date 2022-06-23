@@ -6,7 +6,7 @@ use App\Models\Gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
+use RealRashid\SweetAlert\Facades\Alert;
 class GalleryController extends Controller
 {
     /**
@@ -49,7 +49,7 @@ class GalleryController extends Controller
         //
         $request->validate([
             'ket' => 'required',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $input = $request->all();
   
@@ -59,11 +59,16 @@ class GalleryController extends Controller
             $image->move($destinationPath, $profileImage);
             $input['gambar'] = "$profileImage";
         }
-    
+        try {
         Gallery::create($input);
      
         return redirect()->route('table-gallery.index')
                         ->with('success','Gallery created successfully.');
+        }
+         catch (\Exception $e){
+            return redirect()->route('table-gallery.index')
+                ->with('error', 'Error during the creation!');
+        }
     }
 
     /**
@@ -101,27 +106,38 @@ class GalleryController extends Controller
     public function update(Request $request, Gallery $gallery)
     {
         //
+        //proses input data gedung
         $request->validate([
             'ket' => 'required',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
   
-        $input = $request->all();
-  
-        if ($image = $request->file('gambar')) {
+        $input = $request->all(); 
+            
+        //--------proses update data lama & upload file foto baru--------
+        $image = $request->file('gambar');
+        if(!empty($image)) //kondisi akan upload foto baru
+        {
+            if(!empty($gallery->gambar)){ //kondisi ada nama file foto di tabel
+                //hapus foto lama
+                unlink('image/'.$gallery->gambar);
+            }
+            //proses upload foto baru
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            //print_r($profileImage); die();
             $image->move($destinationPath, $profileImage);
             $input['gambar'] = "$profileImage";
-        }else{
-            unset($input['gambar']);
         }
-          
-        $gallery->update($input);
-    
-        return redirect()->route('table-gallery.index')
-                        ->with('success','gallery updated successfully');
-    
+        else //kondisi user hanya update data saja, bukan ganti foto
+        {
+            $input['gambar'] = $gallery->gambar; //nama file foto masih yg lama
+        }
+        
+            $gallery->update($input);
+            //return redirect()->back()
+            return redirect()->route('table-gallery.index')
+                ->with('success', 'gallery Updated successfully!');
         /**$request->validate([
             'ket' => 'required',
             'gambar' => 'required',
@@ -145,11 +161,18 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        //
-        $gallery = Gallery::findOrFail($id);
+        ////--------hapus dulu fisik file foto--------
+        $gallery = Gallery::find($id);
+
+        if(!empty($gallery->gambar)) unlink('image/'.$gallery->gambar);
+        //dd($ruangan); 
+        
+        $delete = Gallery::where('id', $id)->delete();
+        return redirect()->route('table-gallery.index');
+        /**$gallery = Gallery::findOrFail($id);
         $gallery->delete();
 
         return redirect()->route('table-gallery.index')
-            ->with('success', 'Gallery deleted successfully');
+            ->with('success', 'Gallery deleted successfully');*/
     }
 }

@@ -8,6 +8,7 @@ use App\Models\TablePaket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class TablePaketController extends Controller
 {
@@ -64,7 +65,7 @@ class TablePaketController extends Controller
         TablePaket::create($input);
      
         return redirect()->route('tabel-paket.index')
-                        ->with('success','Product created successfully.');
+                        ->with('success','Paket created successfully.');
 
         //$filename = $request->logo->getClientOriginalName();
         //$logo = $request->logo->storeAs('logo-paket', $filename);
@@ -169,11 +170,30 @@ class TablePaketController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        $paket = TablePaket::findOrFail($id);
+    {   
+        //--------hapus dulu fisik file foto--------
+        $paket = TablePaket::find($id);
+
+        if(!empty($paket->logo)) unlink('image/'.$paket->logo);
+        //dd($ruangan); 
+        
+        $delete = TablePaket::where('id', $id)->delete();
+        return redirect()->back();
+        /**$paket = TablePaket::findOrFail($id);
         $paket->delete();
 
         return redirect()->route('tabel-paket.index')
-            ->with('success', 'Mahasiswa deleted successfully');
+            ->with('success', 'Mahasiswa deleted successfully');*/
+    }
+        public function generatePDF()
+    {
+        $data = [
+            'title' => 'Welcome to Blacksweet EO/WO.com',
+            'date' => date('m/d/Y')
+        ];
+          
+        $pdf = PDF::loadView('admin/paketpdf', $data);
+    
+        return $pdf->download('paket.pdf');
     }
 }

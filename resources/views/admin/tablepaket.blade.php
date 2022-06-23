@@ -5,7 +5,9 @@
             Paket
         </div>
         <div class="card-body">
-
+            <a href="{{ url("paket-pdf") }}" type="button" class="btn btn-outline-primary" >
+                    PDF
+            </a>
             <div class="modal-primary me-1 mb-1 d-inline-block">
                 <!-- Button trigger for primary themes modal -->
                 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#primary">
@@ -84,11 +86,6 @@
                 </div>
             </div>
 
-            @if ($message = Session::get('success'))
-                <div class="alert alert-success">
-                    <p>{{ $message }}</p>
-                </div>
-            @endif
             @php
                 $no = 1;
             @endphp
@@ -112,16 +109,12 @@
                             <td>
                                     
                                 
-                                <form method="POST" action="{{ route('tabel-paket.destroy', $d->id) }}">
-                                    @csrf
-                                    @method('DELETE')
+                                
                                     <a href="{{ route('tabel-paket.edit',$d->id) }}" type="button" class="btn btn-outline-primary" >
                                         Edit
                                     </a>
-                                    <button class="btn btn-danger ml-1" type="submit" onclick="return confirm('Anda Yakin Data diHapus???')" >
-                                        <i class="bx bx-check d-block d-sm-none"></i>
-                                        <span class="d-none d-sm-block">Hapus</span>
-                                    </button>
+                                    
+                                    <a href="/paket-delete/{{$d->id}}" class="btn btn-danger ml-1 delete-confirm" role="button">Delete</a>
                                 
                                 <!--<div class="modal fade" id="hapus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                     <div class="modal-dialog">
@@ -136,7 +129,6 @@
                                         </div>
                                     </div>
                                 </div>-->
-                                </form>
                             </td>
                         </tr>
                     @endforeach

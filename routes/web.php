@@ -40,16 +40,19 @@ Route::get('/gallery', [galleryPageController::class, 'index'])->name('gallery')
 Route::get('/paket-detail/{id}', [DetailPaketController::class, 'index'])->name('paketDetail');
 Route::post('/detail', [DetailPaketController::class, 'show'])->name('getDetail');
 
-
 // ketika sudah login maka bisa mengakses fitur yang ada di dalam middleware
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('tabel-paket', TablePaketController::class);
+    Route::get('/paket-delete/{id}', [TablePaketController::class, 'destroy']);
+    Route::get('paket-pdf', [TablePaketController::class, 'generatePDF']);
 });
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('table-paketdetail', tableDetailController::class);
+    Route::get('/detail-delete/{id}', [tableDetailController::class, 'destroy']);
 });
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('table-gallery', GalleryController::class);
+    Route::get('/gallery-delete/{id}', [GalleryController::class, 'destroy']);
 });
 Route::get('/home', function () {
     return view('landingpage.home');

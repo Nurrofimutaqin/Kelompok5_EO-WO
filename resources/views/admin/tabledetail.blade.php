@@ -105,11 +105,6 @@
                 </div>
             </div>
 
-            @if ($message = Session::get('success'))
-                <div class="alert alert-success">
-                    <p>{{ $message }}</p>
-                </div>
-            @endif
             @php
                 $no = 1;
             @endphp
@@ -135,110 +130,10 @@
                             <td> {{ $d->harga }} </td>
                             <td><img src="{{ asset('image/' . $d->foto) }}" class="img-thumbnail" alt="" style="height: 100px;"></td>
                             <td>
-                                 <!--<div class="modal-primary me-1 mb-1 d-inline-block"> -->
-                                    <!-- Button trigger for primary themes modal -->
-                                    
-
-                                    <!--primary theme Modal 
-                                    <div class="modal fade text-left" id="primaryedit" tabindex="-1" role="dialog"
-                                        aria-labelledby="myModalLabel160" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-                                            role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header bg-primary">
-                                                    <h5 class="modal-title white" id="myModalLabel160">
-                                                        Edit Data paket
-                                                    </h5>
-                                                    <button type="button" class="close" data-bs-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <i data-feather="x"></i>
-                                                    </button>
-                                                </div>
-
-                                                @if ($errors->any())
-                                                    <div class="alert alert-danger">
-                                                        <strong>Whoops!</strong> There were some problems with your
-                                                        input.<br><br>
-                                                        <ul>
-                                                            @foreach ($errors->all() as $error)
-                                                                <li>{{ $error }}</li>
-                                                            @endforeach
-                                                        </ul>
-                                                    </div>
-                                                @endif
-
-                                                <form action="{{ route('tabel-paket.update', $d->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('PUT')
-
-                                                    <div class="row">
-                                                        <div class="col-xs-12 col-sm-12 col-md-12">
-                                                            <div class="form-group mx-4 mt-2">
-                                                                <strong>Nama Paket :</strong>
-                                                                <input type="text" name="nama_paket" class="form-control"
-                                                                    value=" {{ $d->id_paket }} ">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xs-12 col-sm-12 col-md-12">
-                                                            <div class="form-group mx-4 mt-2">
-                                                                <strong>Nama Paket :</strong>
-                                                                <input type="text" name="nama_paket" class="form-control"
-                                                                    value=" {{ $d->nama_paketDetail }} ">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xs-12 col-sm-12 col-md-12">
-                                                            <div class="form-group mx-4">
-                                                                <strong>Logo:</strong>
-                                                                <input type="text" name="logo" class="form-control"
-                                                                    value=" {{ $d->deskripsi }} ">
-                                                            </div>
-                                                        </div>
-                                                        <div>&nbsp;</div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-light-secondary"
-                                                            data-bs-dismiss="modal">
-                                                            <i class="bx bx-x d-block d-sm-none"></i>
-                                                            <span class="d-none d-sm-block">Close</span>
-                                                        </button>
-                                                        <button type="submit" value="ubahpaket"
-                                                            class="btn btn-primary ml-1">
-                                                            <i class="bx bx-check d-block d-sm-none"></i>
-                                                            <span class="d-none d-sm-block">Accept</span>
-                                                        </button>
-
-                                                    </div>
-                                                </form>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>  --> 
-
+                                 
                                 
-                                <form method="POST" action="{{ route('table-paketdetail.destroy', $d->id) }}">
-                                    
-                                    @csrf
-                                    @method('DELETE')
                                     <a href="{{ route('table-paketdetail.edit',$d->id) }}"type="button" class="btn btn-outline-primary" >Edit</a>
-                                    <button class="btn btn-danger ml-1 mt0" type="submit" onclick="return confirm('Anda Yakin Data diHapus???')">
-                                        <i class="bx bx-check d-block d-sm-none"></i>
-                                        <span class="d-none d-sm-block">Hapus</span>
-                                    </button>
-                                    <!--<div class="modal fade" id="hapus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                            <div class="modal-body">
-                                                Apakah anda ingin menghapus data ini?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="submit" value="hapuspaket" class="btn btn-danger">Hapus</button>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>-->
-                                </form>
+                                    <a href="/detail-delete/{{$d->id}}" class="btn btn-danger ml-1 delete-confirm" role="button">Delete</a>
                                 
                                 
                             </td>
