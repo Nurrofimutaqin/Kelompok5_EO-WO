@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\Models\TablePaket;
 use App\Models\DetailPaket;
 
+use Illuminate\Support\Facades\DB;
+
 class tableDetailController extends Controller
 {
     /**
@@ -18,13 +20,19 @@ class tableDetailController extends Controller
     public function index()
     {
         //
-        $detail = DetailPaket::latest()->paginate(5);
-    
+        //$detail = DetailPaket::latest()->paginate(5);
+        $detail = DB::table('paket_detail')
+            ->join('paket', 'paket_detail.id_paket', '=', 'paket.id')
+            ->select('paket_detail.*', 'paket.nama_paket')
+            ->get();
+        
+        $paket = TablePaket::all();
+
         
         if (empty(Auth::user()) || Auth::user()->role == 'pelanggan') {
             return redirect()->route('beranda');
         } else {
-            return view('admin.tabledetail', compact('detail'));
+            return view('admin.tabledetail', compact('detail','paket'));
         }
 
     }
@@ -38,7 +46,7 @@ class tableDetailController extends Controller
     {
         //
         $paket = TablePaket::all();
-        return view('admin.createdetail', compact('paket'));
+        return view('admin.tabledetail', compact('paket'));
     }
 
     /**
@@ -123,7 +131,7 @@ class tableDetailController extends Controller
         //dd($ruangan); 
         
         $delete = TablePaket::where('id', $id)->delete();
-        return redirect()->back();
+        return redirect()->route('table-paketdetail.index');
 
     }
 }

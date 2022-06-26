@@ -42,10 +42,14 @@
 
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12">
-                                        <div class="form-group mx-4 mt-3">
-                                            <strong>Nama Paket :</strong>
-                                            <input type="text" name="id_paket" class="form-control"
-                                                placeholder="Nama Paket detail">
+                                        <div class="form-group">
+                                            <strong>Nama Paket:</strong>
+                                            <select class="form-control" name="id_paket">
+                                                <option value="">-- Pilih paket--</option>
+                                                @foreach($paket as $p)
+                                                    <option value="{{ $p->id }}">{{ $p->nama_paket }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -124,7 +128,7 @@
                     @foreach ($detail as $d)
                         <tr>
                             <td> {{ $no++ }} </td>
-                            <td> {{ $d->id_paket }} </td>
+                            <td> {{ $d->nama_paket }} </td>
                             <td> {{ $d->nama_paketDetail }} </td>
                             <td> {{ $d->deskripsi }} </td>
                             <td> {{ $d->harga }} </td>
