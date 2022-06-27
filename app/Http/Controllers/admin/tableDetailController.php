@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\TablePaket;
 use App\Models\DetailPaket;
-
+use App\Models\Paket;
 use Illuminate\Support\Facades\DB;
 
 class tableDetailController extends Controller
@@ -25,16 +25,15 @@ class tableDetailController extends Controller
             ->join('paket', 'paket_detail.id_paket', '=', 'paket.id')
             ->select('paket_detail.*', 'paket.nama_paket')
             ->get();
-        
+
         $paket = TablePaket::all();
 
-        
+
         if (empty(Auth::user()) || Auth::user()->role == 'pelanggan') {
             return redirect()->route('beranda');
         } else {
-            return view('admin.tabledetail', compact('detail','paket'));
+            return view('admin.tabledetail', compact('detail', 'paket'));
         }
-
     }
 
     /**
@@ -66,18 +65,18 @@ class tableDetailController extends Controller
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $input = $request->all();
-  
+
         if ($image = $request->file('foto')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['foto'] = "$profileImage";
         }
-    
+
         DetailPaket::create($input);
-     
+
         return redirect()->route('table-paketdetail.index')
-                        ->with('success','paket detail created successfully.');
+            ->with('success', 'paket detail created successfully.');
     }
 
     /**
@@ -100,8 +99,12 @@ class tableDetailController extends Controller
     public function edit($id)
     {
         //
+        $paket = Paket::all();
         $detail = DetailPaket::find($id);
-        return view('admin.editdetail',compact('detail'));
+        return view('admin.editdetailpaket', [
+            'detail' => $detail,
+            'paket' => $paket,
+        ]);
     }
 
     /**
@@ -113,7 +116,52 @@ class tableDetailController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $request->validate([
+            'id_paket' => 'required',
+            'nama_paketDetail' => 'required',
+            'harga' => 'required',
+            'deskripsi' => 'required',
+            'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $input = DetailPaket::findOrFail($id);
+        // dd($request->all());
+
+        if ($image = $request->file('foto')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['foto'] = "$profileImage";
+        }
+
+        $input->update([
+            'nama_PaketDetail' => $request->nama_PaketDetail,
+            'harga' => $request->harga,
+            'deskripsi' => $request->deskripsi,
+            'foto' => $input['foto'],
+        ]);
+
+        //$tablePaket->update($input);
+
+        return redirect()->route('tabel-paket.index')
+            ->with('success', 'Product updated successfully');
+
+
         //
+        /**$request->validate([
+            'nama_paket' => 'required',
+            'foto' => 'required',
+        ]);
+
+        // $tablePaket->update($request->all());
+        $paket = TablePaket::findOrFail($id);
+        $paket->update([
+            'nama_paket' => $request->nama_paket,
+            'foto' => $request->foto,
+        ]);
+        return redirect()->route('tabel-paket.index')
+            ->with('success', 'Paket updated successfully');**/
     }
 
     /**
@@ -124,14 +172,18 @@ class tableDetailController extends Controller
      */
     public function destroy($id)
     {
-        ////--------hapus dulu fisik file foto--------
-        $detail = DetailPaket::find($id);
+        //--------hapus dulu fisik file foto--------
+        $paket = DetailPaket::find($id);
 
-        if(!empty($detail->logo)) unlink('image/'.$detail->logo);
-        //dd($ruangan); 
-        
-        $delete = TablePaket::where('id', $id)->delete();
-        return redirect()->route('table-paketdetail.index');
+        if (!empty($paket->foto)) unlink('image/' . $paket->foto);
+        //dd($ruangan);
 
+        $delete = DetailPaket::where('id', $id)->delete();
+        return redirect()->back();
+        /**$paket = TablePaket::findOrFail($id);
+        $paket->delete();
+
+        return redirect()->route('tabel-paket.index')
+            ->with('success', 'Mahasiswa deleted successfully');*/
     }
 }

@@ -5,8 +5,8 @@
             Paket
         </div>
         <div class="card-body">
-            <a href="{{ url("paket-pdf") }}" type="button" class="btn btn-outline-primary" >
-                    PDF
+            <a href="{{ url('paket-pdf') }}" type="button" class="btn btn-outline-primary">
+                PDF
             </a>
             <div class="modal-primary me-1 mb-1 d-inline-block">
                 <!-- Button trigger for primary themes modal -->
@@ -15,8 +15,8 @@
                 </button>
 
                 <!--primary theme Modal -->
-                <div class="modal fade text-left" id="primary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160"
-                    aria-hidden="true">
+                <div class="modal fade text-left" id="primary" tabindex="-1" role="dialog"
+                    aria-labelledby="myModalLabel160" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
                         <div class="modal-content">
                             <div class="modal-header bg-primary">
@@ -105,30 +105,33 @@
                             <td> {{ $no++ }} </td>
                             <td> {{ $d->nama_paket }} </td>
                             <td> {{ $d->logo }} </td>
-                            <td><img src="{{ asset('image/' . $d->logo) }}" class="img-thumbnail" alt="" style="height: 100px;"></td>
+                            <td><img src="{{ asset('image/' . $d->logo) }}" class="img-thumbnail" alt=""
+                                    style="height: 100px;"></td>
                             <td>
-                                    
-                                
-                                
-                                    <a href="{{ route('tabel-paket.edit',$d->id) }}" type="button" class="btn btn-outline-primary" >
-                                        Edit
-                                    </a>
-                                    
-                                    <a href="/paket-delete/{{$d->id}}" class="btn btn-danger ml-1 delete-confirm" role="button">Delete</a>
-                                
+
+
+
+                                <a href="{{ route('tabel-paket.edit', $d->id) }}" type="button"
+                                    class="btn btn-outline-primary">
+                                    Edit
+                                </a>
+
+                                <a href="/paket-delete/{{ $d->id }}" class="btn btn-danger ml-1 delete-confirm"
+                                    role="button">Delete</a>
+
                                 <!--<div class="modal fade" id="hapus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                        <div class="modal-body">
-                                            Apakah anda ingin menghapus data ini?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" value="hapuspaket" class="btn btn-danger">Hapus</button>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>-->
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            Apakah anda ingin menghapus data ini?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" value="hapuspaket" class="btn btn-danger">Hapus</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>-->
                             </td>
                         </tr>
                     @endforeach

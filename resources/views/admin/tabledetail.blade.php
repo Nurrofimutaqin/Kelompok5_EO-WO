@@ -13,8 +13,8 @@
                 </button>
 
                 <!--primary theme Modal -->
-                <div class="modal fade text-left" id="primary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160"
-                    aria-hidden="true">
+                <div class="modal fade text-left" id="primary" tabindex="-1" role="dialog"
+                    aria-labelledby="myModalLabel160" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered " role="document">
                         <div class="modal-content modal-dialog-scrollable">
                             <div class="modal-header bg-primary">
@@ -37,7 +37,8 @@
                                 </div>
                             @endif
 
-                            <form action="{{ route('table-paketdetail.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('table-paketdetail.store') }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="row">
@@ -46,7 +47,7 @@
                                             <strong>Nama Paket:</strong>
                                             <select class="form-control" name="id_paket">
                                                 <option value="">-- Pilih paket--</option>
-                                                @foreach($paket as $p)
+                                                @foreach ($paket as $p)
                                                     <option value="{{ $p->id }}">{{ $p->nama_paket }}</option>
                                                 @endforeach
                                             </select>
@@ -62,15 +63,13 @@
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group mx-4 mt-3">
                                             <strong>Harga :</strong>
-                                            <input type="text" name="harga" class="form-control"
-                                                placeholder="Harga">
+                                            <input type="text" name="harga" class="form-control" placeholder="Harga">
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group mx-4 mt-3">
                                             <strong>Deskripsi :</strong>
-                                            <textarea type="text" name="deskripsi" class="form-control"
-                                                placeholder="Deskripsi"></textarea>
+                                            <textarea type="text" name="deskripsi" class="form-control" placeholder="Deskripsi"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -132,14 +131,19 @@
                             <td> {{ $d->nama_paketDetail }} </td>
                             <td> {{ $d->deskripsi }} </td>
                             <td> {{ $d->harga }} </td>
-                            <td><img src="{{ asset('image/' . $d->foto) }}" class="img-thumbnail" alt="" style="height: 100px;"></td>
+                            <td><img src="{{ asset('image/' . $d->foto) }}" class="img-thumbnail" alt=""
+                                    style="height: 100px;"></td>
                             <td>
-                                 
-                                
-                                    <a href="{{ route('table-paketdetail.edit',$d->id) }}"type="button" class="btn btn-outline-primary" >Edit</a>
-                                    <a href="/detail-delete/{{$d->id}}" class="btn btn-danger ml-1 delete-confirm" role="button">Delete</a>
-                                
-                                
+
+
+                                <a href="{{ route('table-paketdetail.edit', $d->id) }}" type="button"
+                                    class="btn btn-outline-primary">
+                                    Edit
+                                </a>
+                                <a href="/detail-delete/{{ $d->id }}" class="btn btn-danger ml-1 delete-confirm"
+                                    role="button">Delete</a>
+
+
                             </td>
                         </tr>
                     @endforeach

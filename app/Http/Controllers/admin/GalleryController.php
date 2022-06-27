@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\admin;
+
 use App\Http\Controllers\Controller;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
+
 class GalleryController extends Controller
 {
     /**
@@ -18,14 +20,14 @@ class GalleryController extends Controller
     {
         //
         $Gallery = Gallery::latest()->paginate(5);
-    
-        
+
+
         if (empty(Auth::user()) || Auth::user()->role == 'pelanggan') {
             return redirect()->route('beranda');
         } else {
             return view('admin.gallery', compact('Gallery'));
         }
-    }    
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -52,7 +54,7 @@ class GalleryController extends Controller
             'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $input = $request->all();
-  
+
         if ($image = $request->file('gambar')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
@@ -60,12 +62,11 @@ class GalleryController extends Controller
             $input['gambar'] = "$profileImage";
         }
         try {
-        Gallery::create($input);
-     
-        return redirect()->route('table-gallery.index')
-                        ->with('success','Gallery created successfully.');
-        }
-         catch (\Exception $e){
+            Gallery::create($input);
+
+            return redirect()->route('table-gallery.index')
+                ->with('success', 'Gallery created successfully.');
+        } catch (\Exception $e) {
             return redirect()->route('table-gallery.index')
                 ->with('error', 'Error during the creation!');
         }
@@ -92,8 +93,7 @@ class GalleryController extends Controller
     {
         //
         $gallery = Gallery::find($id);
-        return view('admin.editgallery',compact('gallery'));
-
+        return view('admin.editgallery', compact('gallery'));
     }
 
     /**
@@ -103,7 +103,7 @@ class GalleryController extends Controller
      * @param  \App\Models\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gallery $gallery)
+    public function update(Request $request, $id)
     {
         //
         //proses input data gedung
@@ -111,33 +111,25 @@ class GalleryController extends Controller
             'ket' => 'required',
             'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-  
-        $input = $request->all(); 
-            
-        //--------proses update data lama & upload file foto baru--------
-        $image = $request->file('gambar');
-        if(!empty($image)) //kondisi akan upload foto baru
-        {
-            if(!empty($gallery->gambar)){ //kondisi ada nama file foto di tabel
-                //hapus foto lama
-                unlink('image/'.$gallery->gambar);
-            }
-            //proses upload foto baru
+
+        $input = Gallery::findOrFail($id);
+        // dd($request->all());
+
+        if ($image = $request->file('gambar')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            //print_r($profileImage); die();
             $image->move($destinationPath, $profileImage);
             $input['gambar'] = "$profileImage";
         }
-        else //kondisi user hanya update data saja, bukan ganti foto
-        {
-            $input['gambar'] = $gallery->gambar; //nama file foto masih yg lama
-        }
-        
-            $gallery->update($input);
-            //return redirect()->back()
-            return redirect()->route('table-gallery.index')
-                ->with('success', 'gallery Updated successfully!');
+
+        $input->update([
+            'ket' => $request->ket,
+            'gambar' => $input['gambar'],
+        ]);
+
+        //return redirect()->back()
+        return redirect()->route('table-gallery.index')
+            ->with('success', 'gallery Updated successfully!');
         /**$request->validate([
             'ket' => 'required',
             'gambar' => 'required',
@@ -147,10 +139,9 @@ class GalleryController extends Controller
             'ket' => $request->ket,
             'gambar' => $request->gambar,
         ]);
-    
+
         return redirect()->route('table-gallery.index')
                         ->with('success','Gallery created successfully.');*/
-
     }
 
     /**
@@ -164,11 +155,11 @@ class GalleryController extends Controller
         ////--------hapus dulu fisik file foto--------
         $gallery = Gallery::find($id);
 
-        if(!empty($gallery->gambar)) unlink('image/'.$gallery->gambar);
-        //dd($ruangan); 
-        
+        if (!empty($gallery->gambar)) unlink('image/' . $gallery->gambar);
+        //dd($ruangan);
+
         $delete = Gallery::where('id', $id)->delete();
-        return redirect()->route('table-gallery.index');
+        return redirect()->back();
         /**$gallery = Gallery::findOrFail($id);
         $gallery->delete();
 

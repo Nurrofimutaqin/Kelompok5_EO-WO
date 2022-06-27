@@ -5,10 +5,11 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Paket;
 use App\Models\TablePaket;
+use Barryvdh\DomPDF\PDF as DomPDFPDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use PDF;
+// use PDF;
 
 class TablePaketController extends Controller
 {
@@ -54,18 +55,18 @@ class TablePaketController extends Controller
             'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $input = $request->all();
-  
+
         if ($image = $request->file('logo')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['logo'] = "$profileImage";
         }
-    
+
         TablePaket::create($input);
-     
+
         return redirect()->route('tabel-paket.index')
-                        ->with('success','Paket created successfully.');
+            ->with('success', 'Paket created successfully.');
 
         //$filename = $request->logo->getClientOriginalName();
         //$logo = $request->logo->storeAs('logo-paket', $filename);
@@ -124,27 +125,26 @@ class TablePaketController extends Controller
             'nama_paket' => 'required',
             'logo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-  
-        $input = TablePaket::findOrFail($id);
 
-  
+        $input = TablePaket::findOrFail($id);
+        // dd($request->all());
+
         if ($image = $request->file('logo')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['logo'] = "$profileImage";
-        }else{
-            unset($input['logo']);
         }
+
         $input->update([
             'nama_paket' => $request->nama_paket,
-            'logo' => $request->logo,
+            'logo' => $input['logo'],
         ]);
-          
+
         //$tablePaket->update($input);
-    
+
         return redirect()->route('tabel-paket.index')
-                        ->with('success','Product updated successfully');
+            ->with('success', 'Product updated successfully');
 
 
         //
@@ -170,13 +170,13 @@ class TablePaketController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {   
+    {
         //--------hapus dulu fisik file foto--------
         $paket = TablePaket::find($id);
 
-        if(!empty($paket->logo)) unlink('image/'.$paket->logo);
-        //dd($ruangan); 
-        
+        if (!empty($paket->logo)) unlink('image/' . $paket->logo);
+        //dd($ruangan);
+
         $delete = TablePaket::where('id', $id)->delete();
         return redirect()->back();
         /**$paket = TablePaket::findOrFail($id);
@@ -185,15 +185,15 @@ class TablePaketController extends Controller
         return redirect()->route('tabel-paket.index')
             ->with('success', 'Mahasiswa deleted successfully');*/
     }
-        public function generatePDF()
+    public function generatePDF()
     {
         $data = [
             'title' => 'Welcome to Blacksweet EO/WO.com',
             'date' => date('m/d/Y')
         ];
-          
-        $pdf = PDF::loadView('admin/paketpdf', $data);
-    
+
+        $pdf = DomPDFPDF::loadView('admin/paketpdf', $data);
+
         return $pdf->download('paket.pdf');
     }
 }
