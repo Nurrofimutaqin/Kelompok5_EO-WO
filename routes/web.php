@@ -7,6 +7,7 @@ use App\Http\Controllers\landingpage\DetailPaketController;
 use App\Http\Controllers\landingpage\galleryPageController;
 use App\Http\Controllers\admin\GalleryController;
 use App\Http\Controllers\admin\tableDetailController;
+use App\Http\Controllers\admin\TablePetugasController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\MultiUser;
 // use Illuminate\Support\Facades\Auth;
@@ -53,6 +54,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('table-gallery', GalleryController::class);
     Route::get('/gallery-delete/{id}', [GalleryController::class, 'destroy']);
+
+    Route::resource('table-petugas', TablePetugasController::class);
+    Route::get('/petugas-delete/{id}', [TablePetugasController::class, 'destroy']);
 });
 Route::get('/home', function () {
     return view('landingpage.home');

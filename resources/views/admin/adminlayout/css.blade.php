@@ -8,3 +8,9 @@
 <link rel="stylesheet" href=" {{ asset('assets_admin/vendors/bootstrap-icons/bootstrap-icons.css') }} ">
 <link rel="stylesheet" href=" {{ asset('assets_admin/css/app.css') }} ">
 <link rel="shortcut icon" href=" {{ asset('assets_admin/images/favicon.svg') }} " type="image/x-icon">
+
+<!-- DataTables -->
+<link rel="stylesheet" href="{{ asset('assets_admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+<link rel="stylesheet"
+    href="{{ asset('assets_admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets_admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">

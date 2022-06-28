@@ -24,9 +24,9 @@
                 @if (empty(Auth::user()) || Auth::user()->role == 'admin')
                     <li class="sidebar-item ">
 
-                        <a href="" class='sidebar-link'>
+                        <a href="{{ url('/table-petugas') }}" class='sidebar-link'>
                             <i class="bi bi-grid-fill"></i>
-                            <span>Petugas</span>
+                            <span>User</span>
                         </a>
                     </li>
                 @endif
@@ -55,7 +55,8 @@
                     </a>
                 </li>
                 <li class="sidebar-item ">
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"
                         class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>

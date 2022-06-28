@@ -6,10 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Paket;
 use App\Models\TablePaket;
 use Barryvdh\DomPDF\PDF as DomPDFPDF;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-// use PDF;
+use PDF;
 
 class TablePaketController extends Controller
 {
@@ -187,13 +188,14 @@ class TablePaketController extends Controller
     }
     public function generatePDF()
     {
+
         $data = [
             'title' => 'Welcome to Blacksweet EO/WO.com',
-            'date' => date('m/d/Y')
+            'date' => date('m/d/Y'),
         ];
 
-        $pdf = DomPDFPDF::loadView('admin/paketpdf', $data);
+        $pdf = PDF::loadView('admin/paketpdf', $data);
 
-        return $pdf->download('paket.pdf');
+        return $pdf->download('suratacc.pdf');
     }
 }
