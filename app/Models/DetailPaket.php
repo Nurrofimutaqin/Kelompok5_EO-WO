@@ -10,7 +10,7 @@ class DetailPaket extends Model
     use HasFactory;
     protected $table = 'paket_detail';
     protected $fillable = [
-        
+
         'id_paket',
         'nama_paketDetail',
         'deskripsi',
@@ -18,9 +18,8 @@ class DetailPaket extends Model
         'foto',
     ];
 
-        public function Paket(){
+    public function Paket()
+    {
         return $this->belongsTo(TablePaket::class);
     }
-
-
 }
