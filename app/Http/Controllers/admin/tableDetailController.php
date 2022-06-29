@@ -136,7 +136,8 @@ class tableDetailController extends Controller
         }
 
         $input->update([
-            'nama_PaketDetail' => $request->nama_PaketDetail,
+            'id_paket' => $request->id_paket,
+            'nama_paketDetail' => $request->nama_paketDetail,
             'harga' => $request->harga,
             'deskripsi' => $request->deskripsi,
             'foto' => $input['foto'],
@@ -144,7 +145,7 @@ class tableDetailController extends Controller
 
         //$tablePaket->update($input);
 
-        return redirect()->route('tabel-paket.index')
+        return redirect()->route('table-paketdetail.index')
             ->with('success', 'Product updated successfully');
 
 
