@@ -4,49 +4,59 @@
 @endpush
 @section('content')
     @include('landingpage.hero')
-    <!-- ======= Events Section ======= -->
-    <section id="events" class="events">
+    <!-- ======= Menu Section ======= -->
+    <section id="goto" class="menu bg-section chefs">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Events</h2>
-                <p>Organize Your Events in Blacksweet</p>
+                <h2>Detail Paket</h2>
+                <p>Detail Paket</p>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    @if (!empty(Auth::user()))
+                        <input type="date" id="tgl_booking" name="tgl_booking" class="form-control"
+                            placeholder="TTTT-BB-HH">
+                        <input type="hidden" id="id_paket" name="id_paket" value="{{ $idPaket }}">
+                        <button class="btn btn-primary" id="btn_cek">Cek Data</button>
+                    @endif
+                </div>
+                <div class="col">
+
+                </div>
             </div>
 
-            <input type="date" id="tgl_booking" name="tgl_booking" class="form-control" placeholder="TTTT-BB-HH">
-            <input type="hidden" id="id_paket" name="id_paket" value="{{ $idPaket }}">
-            <button class="btn btn-primary" id="btn_cek">Cek Data</button>
-            <div class="events-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                <div class="swiper-wrapper" id="isi_swiper">
-
-                    @foreach ($allData as $d)
-                        <div class="swiper-slide">
-                            <div class="row event-item">
-                                <div class="col-lg-6">
-                                    <img src="{{ url('assets_landingpage/img/event-birthday.jpg') }}"
-                                        class="img-fluid" alt="">
-                                </div>
-                                <div class="col-lg-6 pt-4 pt-lg-0 content">
-                                    <h3>{{ $d->nama_paketDetail }}</h3>
-                                    <div class="price">
-                                        <p><span>Rp. {{ $d->harga }}</span></p>
-                                    </div>
-                                    <p class="fst-italic">
-                                        {{ $d->deskripsi }}
-                                    </p>
+            <div class="row" id="isi_swiper">
+                @if (empty(Auth::user()))
+                    <div class="section-title">
+                        <h2><a class="nav-link scrollto" href="{{ route('landing-login') }}">Login Dulu!</a></h2>
+                    </div>
+                @endif
+                @foreach ($allData as $d)
+                    <div class="col-lg-4 col-md-6 mb-5">
+                        <div class="member" data-aos="zoom-in" data-aos-delay="100">
+                            <img src="{{ asset('image/' . $d->foto) }}" alt="" height="400px">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h2>{{ $d->nama_paketDetail }}</h2>
+                                    <h4>Harga :</h4>
+                                    <span>Rp. {{ $d->harga }}
+                                        {{-- {{ $d->id }} --}}
+                                    </span>
+                                    <h4>Fasilitas :</h4>
+                                    <p>{{ $d->deskripsi }}</p>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
+                @endforeach
 
-
-                </div>
-                <div class="swiper-pagination"></div>
             </div>
-
         </div>
-    </section><!-- End Events Section -->
+    </section><!-- End Menu Section -->
 @endsection
+
+
 @push('script-custom')
     <script>
         $(document).ready(function() {
@@ -59,6 +69,7 @@
             $("#btn_cek").click(function() {
                 var id = $('#id_paket').val()
                 var tgl = $('#tgl_booking').val()
+
                 $.ajax({
                     type: "POST",
                     url: "{{ route('getDetail') }}",
@@ -66,34 +77,40 @@
                         id: id,
                         tgl: tgl,
                     },
-                    // dataType: 'json',
                     success: function(data) {
-                        // console.log(data)
+                        console.log(data)
 
                         let data_swiper = "";
                         for (let x in data) {
-                            data_swiper += ` <div class="swiper-slide">
-                                                        <div class="row event-item">
-                                                            <div class="col-lg-6">
-                                                                <img src="{{ url('assets_landingpage/img/event-birthday.jpg') }}"
-                                                                    class="img-fluid" alt="">
-                                                            </div>
-                                                            <div class="col-lg-6 pt-4 pt-lg-0 content">
-                                                                <h3>${data[x]['nama_paketDetail']}</h3>
-                                                                <div class="price">
-                                                                    <p><span>${data[x]['harga']}</span></p>
-                                                                </div>
-                                                                <p class="fst-italic">
-                                                                   ${data[x]['deskripsi']}
-                                                                </p>
-                                                            </div>
+                            data_swiper += `<div class="col-lg-4 col-md-6 mb-5">
+                                                <div class="member" data-aos="zoom-in" data-aos-delay="100">
+                                                    <img src="{{ asset('image/background.jpg') }}" alt="" height="400px">
+                                                    <div class="member-info">
+                                                        <div class="member-info-content">
+                                                            <h2>${data[x]['nama_paketDetail']}</h2>
+                                                            <h4>Harga :</h4>
+                                                            <span> ${data[x]['harga']} </span> <br>
+                                                            <h4>Fasilitas :</h4>
+                                                           <p> ${data[x]['deskripsi']} </p>
                                                         </div>
-                                                    </div>`;
+                                                    </div>
+                                                </div>
+                                                <center>
+                                                     <form action="{{ route('booking-store') }}" method="post" role="form" class="php-email-form">
+                                                       @csrf
+                                                        <div class="form-group mt-3">
+                                                            <input type="date" class="form-control" name="tgl_booking"
+                                                                placeholder="Tanggal Booking" required>
+                                                            <input type="hidden" class="form-control" name="id" value="${data[x]['id']}">
+                                                        </div>
+                                                        <div class="text-center"><button type="submit">Booking Paket</button></div>
+                                                    </form>
+                                                </center>
+                                            </div> `;
                         }
                         // console.log(data_swiper)
                         $('#isi_swiper').html('');
                         $('#isi_swiper').html(data_swiper);
-
 
                     }
                 });

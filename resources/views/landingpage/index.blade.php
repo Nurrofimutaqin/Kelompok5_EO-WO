@@ -9,6 +9,7 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
     @include('landingpage.layoutlanding.css')
+    @stack('style-custom')
 </head>
 
 <body>

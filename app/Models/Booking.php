@@ -17,4 +17,14 @@ class Booking extends Model
         'bukti_bayar',
         'tgl_bayar',
     ];
+
+    public function DetailPaket()
+    {
+        return $this->belongsTo(DetailPaket::class, 'id_paketDetail', 'id');
+    }
+
+    public function Pemesan()
+    {
+        return $this->belongsTo(User::class, 'id_user', 'id');
+    }
 }

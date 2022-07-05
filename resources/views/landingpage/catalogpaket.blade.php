@@ -14,7 +14,7 @@
                 @foreach ($dataPaket as $d)
                     <div class="col-lg-4 col-md-6 mb-5">
                         <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                            <img src="{{ asset('image/' . $d->logo) }}" alt="">
+                            <img src="{{ asset('image/' . $d->logo) }}" alt="" height="200px">
                             <div class="member-info">
                                 <div class="member-info-content">
                                     <h4>{{ $d->nama_paket }}</h4>

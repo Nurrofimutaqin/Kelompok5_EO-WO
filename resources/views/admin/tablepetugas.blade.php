@@ -70,7 +70,7 @@
                                             <div class="form-group mx-4 mt-3">
                                                 <strong>Jenis Kelamin :</strong>
                                                 <select class="form-control" name="jenis_kelamin">
-                                                    <option value="">-- Pilih paket--</option>
+                                                    <option value="">-- Jenis Kelamin --</option>
                                                     <option value="laki-laki">laki-laki</option>
                                                     <option value="perempuan">perempuan</option>
                                                 </select>
@@ -82,7 +82,7 @@
                                             <div class="form-group mx-4 mt-3">
                                                 <strong>Role :</strong>
                                                 <select class="form-control" name="role">
-                                                    <option value="">-- Pilih paket--</option>
+                                                    <option value="">-- Pilih Role --</option>
                                                     <option value="petugas">petugas</option>
                                                 </select>
                                             </div>
@@ -143,7 +143,7 @@
                                     role="button">Delete</a>
 
                                 <!--<div class="modal fade" id="hapus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                                                                                                                                                                                                                                                             </div>-->
+                                                                                                                                                                                                                                                                                                             </div>-->
                             </td>
 
                         </tr>

@@ -6,9 +6,11 @@ use App\Http\Controllers\landingpage\PaketController;
 use App\Http\Controllers\landingpage\DetailPaketController;
 use App\Http\Controllers\landingpage\galleryPageController;
 use App\Http\Controllers\admin\GalleryController;
+use App\Http\Controllers\admin\TableBookingController;
 use App\Http\Controllers\admin\tableDetailController;
 use App\Http\Controllers\admin\TablePetugasController;
 use App\Http\Controllers\ImageUploadController;
+use App\Http\Controllers\landingpage\BookingController;
 use App\Http\Controllers\MultiUser;
 // use Illuminate\Support\Facades\Auth;
 // use App\Http\Controllers\landingpage\HomeController;
@@ -43,6 +45,12 @@ Route::post('/detail', [DetailPaketController::class, 'show'])->name('getDetail'
 
 // ketika sudah login maka bisa mengakses fitur yang ada di dalam middleware
 Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::get('/booking', [BookingController::class, 'index'])->name('booking');
+    Route::post('/booking-store', [BookingController::class, 'store'])->name('booking-store');
+    Route::post('/booking-update/{id}', [BookingController::class, 'update'])->name('booking-update');
+    Route::get('/booking-delete/{id}', [TableBookingController::class, 'destroy']);
+
+    Route::resource('tabel-booking', TableBookingController::class);
     Route::resource('tabel-paket', TablePaketController::class);
     Route::get('/paket-delete/{id}', [TablePaketController::class, 'destroy']);
     Route::get('paket-pdf', [TablePaketController::class, 'generatePDF']);

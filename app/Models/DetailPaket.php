@@ -20,6 +20,6 @@ class DetailPaket extends Model
 
     public function Paket()
     {
-        return $this->belongsTo(TablePaket::class);
+        return $this->belongsTo(TablePaket::class, 'id_paket', 'id');
     }
 }

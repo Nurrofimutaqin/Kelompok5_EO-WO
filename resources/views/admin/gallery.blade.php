@@ -11,7 +11,7 @@
             <div class="modal-primary me-1 mb-1 d-inline-block">
                 <!-- Button trigger for primary themes modal -->
                 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#primary">
-                    + Tambah Paket
+                    + Tambah Gallery
                 </button>
 
                 <!--primary theme Modal -->
@@ -116,25 +116,25 @@
                                     Edit
                                 </a>
                                 <!--button class="btn btn-danger ml-1" type="submit"
-                                                        onclick="return confirm('Anda Yakin Data diHapus???')">
-                                                <i class="bx bx-check d-block d-sm-none"></i>
-                                                <span class="d-none d-sm-block">Hapus</span>
-                                            </button-->
+                                                                onclick="return confirm('Anda Yakin Data diHapus???')">
+                                                        <i class="bx bx-check d-block d-sm-none"></i>
+                                                        <span class="d-none d-sm-block">Hapus</span>
+                                                    </button-->
                                 <a href="/gallery-delete/{{ $g->id }}" class="btn btn-danger ml-1 delete-confirm"
                                     role="button">Delete</a>
                                 <!-- <div class="modal fade" id="hapus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                    <div class="modal-body">
-                                                        Apakah anda ingin menghapus data ini?
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                        <button type="submit" value="hapusgallery" class="btn btn-danger">Hapus</button>
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                            </div>-->
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                            <div class="modal-body">
+                                                                Apakah anda ingin menghapus data ini?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                <button type="submit" value="hapusgallery" class="btn btn-danger">Hapus</button>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>-->
                             </td>
                         </tr>
                     @endforeach

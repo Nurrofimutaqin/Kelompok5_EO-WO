@@ -84,7 +84,7 @@ class DetailPaketController extends Controller
         ]);
         DetailPaket::create($request->all());
         return redirect()->route('tabel-paketdetail.index')
-             ->with('success', 'Paket created successfully.');
+            ->with('success', 'Paket created successfully.');
     }
 
 
@@ -98,7 +98,7 @@ class DetailPaketController extends Controller
     public function edit($id)
     {
         //
-        
+
         $detailPaket = DetailPaket::find($id);
         return view('admin.tabledetail#primarydetail', compact('detailPaket'));
     }
@@ -124,7 +124,7 @@ class DetailPaketController extends Controller
     public function destroy($id)
     {
         //
-        
+
         $tableDetail = DetailPaket::findOrFail($id);
         $tableDetail->delete();
 
