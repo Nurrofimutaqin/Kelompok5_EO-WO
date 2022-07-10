@@ -104,7 +104,7 @@ class BookingController extends Controller
         //$tablePaket->update($User);
 
         return redirect()->route('booking')
-            ->with('success', 'Product updated successfully');
+            ->with('success', 'Booking updated successfully');
     }
 
     /**

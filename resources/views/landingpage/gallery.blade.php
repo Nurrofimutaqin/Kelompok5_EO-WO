@@ -10,7 +10,7 @@
         <div class="container" data-aos="fade-up">
             <div class="section-title">
                 <h2>Gallery</h2>
-                <p>Some photos from Our Restaurant</p>
+                <p>Some photos from Our Paket</p>
             </div>
         </div>
 

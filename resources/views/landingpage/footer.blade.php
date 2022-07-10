@@ -27,20 +27,20 @@
                       <ul>
                           <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
                           <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Catalog</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Detail Of Catalog</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
                       </ul>
                   </div>
 
                   <div class="col-lg-3 col-md-6 footer-links">
                       <h4>Our Services</h4>
                       <ul>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Wedding</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Tunangan</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Birthday</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Akad</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Event Party</a></li>
                       </ul>
                   </div>
 

@@ -13,7 +13,7 @@
         <h1>-----<span>About</span>-----</h1>
 
         <div class="btns">
-            <a href="#about" class="btn-menu animated fadeInUp scrollto">Profil Kami</a>
+            <a href="#about" class="btn-menu animated fadeInUp scrollto">About Us</a>
             {{-- <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Booking</a> --}}
         </div>
     </div>

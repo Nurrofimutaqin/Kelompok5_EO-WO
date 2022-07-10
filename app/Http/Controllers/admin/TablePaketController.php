@@ -145,7 +145,7 @@ class TablePaketController extends Controller
         //$tablePaket->update($input);
 
         return redirect()->route('tabel-paket.index')
-            ->with('success', 'Product updated successfully');
+            ->with('success', 'Paket updated successfully');
 
 
         //
@@ -184,7 +184,7 @@ class TablePaketController extends Controller
         $paket->delete();
 
         return redirect()->route('tabel-paket.index')
-            ->with('success', 'Mahasiswa deleted successfully');*/
+            ->with('success', 'Paket deleted successfully');*/
     }
     public function generatePDF()
     {

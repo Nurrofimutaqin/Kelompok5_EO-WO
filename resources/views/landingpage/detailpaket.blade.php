@@ -17,12 +17,13 @@
                     @if (!empty(Auth::user()))
                         <input type="date" id="tgl_booking" name="tgl_booking" class="form-control"
                             placeholder="TTTT-BB-HH">
+                            <br/>
                         <input type="hidden" id="id_paket" name="id_paket" value="{{ $idPaket }}">
                         <button class="btn btn-primary" id="btn_cek">Cek Data</button>
+                        <br/>
                     @endif
                 </div>
                 <div class="col">
-
                 </div>
             </div>
 
@@ -32,8 +33,11 @@
                         <h2><a class="nav-link scrollto" href="{{ route('landing-login') }}">Login Dulu!</a></h2>
                     </div>
                 @endif
+               
                 @foreach ($allData as $d)
+               
                     <div class="col-lg-4 col-md-6 mb-5">
+                    <br/> <br/>
                         <div class="member" data-aos="zoom-in" data-aos-delay="100">
                             <img src="{{ asset('image/' . $d->foto) }}" alt="" height="400px">
                             <div class="member-info">
@@ -82,7 +86,7 @@
 
                         let data_swiper = "";
                         for (let x in data) {
-                            data_swiper += `<div class="col-lg-4 col-md-6 mb-5">
+                            data_swiper += `<div class="col-lg-4 col-md-6 mb-5"><br/>
                                                 <div class="member" data-aos="zoom-in" data-aos-delay="100">
                                                     <img src="{{ asset('image/background.jpg') }}" alt="" height="400px">
                                                     <div class="member-info">
@@ -103,7 +107,9 @@
                                                                 placeholder="Tanggal Booking" required>
                                                             <input type="hidden" class="form-control" name="id" value="${data[x]['id']}">
                                                         </div>
-                                                        <div class="text-center"><button type="submit">Booking Paket</button></div>
+                                                        <br/>
+                                                        
+                                                        <button class="btn1 scrollto" type="submit">Booking Paket</button>
                                                     </form>
                                                 </center>
                                             </div> `;

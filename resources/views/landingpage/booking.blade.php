@@ -55,7 +55,7 @@
                                     </div>
                                     <div class="col-xs col-sm col-md">
                                         <br>
-                                        <button class="book-a-table-btn scrollto" type="submit">Save</button>
+                                        <button class="btn1 scrollto" type="submit">Save</button>
                                     </div>
                                 </div>
 

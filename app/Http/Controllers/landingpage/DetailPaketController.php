@@ -129,6 +129,6 @@ class DetailPaketController extends Controller
         $tableDetail->delete();
 
         return redirect()->route('tabel-paketdetail.index')
-            ->with('success', 'Mahasiswa deleted successfully');
+            ->with('success', 'Paket deleted successfully');
     }
 }

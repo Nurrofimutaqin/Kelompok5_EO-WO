@@ -76,7 +76,7 @@ class tableDetailController extends Controller
         DetailPaket::create($input);
 
         return redirect()->route('table-paketdetail.index')
-            ->with('success', 'paket detail created successfully.');
+            ->with('success', 'Detail Paket Created Successfully.');
     }
 
     /**
@@ -146,7 +146,7 @@ class tableDetailController extends Controller
         //$tablePaket->update($input);
 
         return redirect()->route('table-paketdetail.index')
-            ->with('success', 'Product updated successfully');
+            ->with('success', 'Detail Paket Updated Successfully');
 
 
         //
@@ -185,6 +185,6 @@ class tableDetailController extends Controller
         $paket->delete();
 
         return redirect()->route('tabel-paket.index')
-            ->with('success', 'Mahasiswa deleted successfully');*/
+            ->with('success', 'Detail Paket deleted successfully');*/
     }
 }

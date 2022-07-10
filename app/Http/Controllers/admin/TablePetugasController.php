@@ -63,7 +63,7 @@ class TablePetugasController extends Controller
         ]);
 
         return redirect()->route('table-petugas.index')
-            ->with('success', 'Paket created successfully.');
+            ->with('success', 'Petugas created successfully.');
     }
 
     /**
@@ -126,7 +126,7 @@ class TablePetugasController extends Controller
         //$tablePaket->update($User);
 
         return redirect()->route('table-petugas.index')
-            ->with('success', 'Product updated successfully');
+            ->with('success', 'Petugas updated successfully');
     }
 
     /**

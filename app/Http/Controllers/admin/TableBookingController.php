@@ -101,6 +101,6 @@ class TableBookingController extends Controller
         $tablebooking->delete();
 
         return redirect()->route('tabel-paket.index')
-            ->with('success', 'Mahasiswa deleted successfully');*/
+            ->with('success', 'Booking deleted successfully');*/
     }
 }
