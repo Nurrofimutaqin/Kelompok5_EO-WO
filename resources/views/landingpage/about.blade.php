@@ -8,12 +8,12 @@
             <div class="row">
                 <div class="container" data-aos="fade-up">
                     <div class="section-title">
-                        <p>Wedding Organizer Kelompok-5</p>
+                        <p>Wedding Organizer Black Sweet</p>
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="about-img">
-                        <img src="assets_landingpage/img/about.jpg" alt="">
+                        <img src="assets_landingpage/img/about-bg.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 content">
@@ -26,15 +26,17 @@
                     <br>
                     <h5>Tentang Kami</h5>
                     <p>
-                        Bali Top Wedding adalah badan penyelenggara pernikahan profesional berbasis di Bali. Di bawah badan
+                        Wedding Organizer Black Sweet adalah badan penyelenggara pernikahan profesional berbasis di Lombok.
+                        Di bawah badan
                         hukum CV. Vinayaka Sukses Makmur (Nomor: 1272 / 22-09 / PK / XI / 2018), kami telah mulai membuka
-                        pintu kami secara legal pada tahun 2014.
+                        pintu kami secara legal pada tahun 2018.
                         <br>
-                        Bergabung dengan organisasi profesional di Bali untuk pengusaha industri pernikahan yaitu (Bali
-                        Wedding Association) pada tahun 2016, dengan kemampuan kami untuk melakukan pernikahan internasional
-                        atau nasional telah diakui oleh sebagian besar tempat pernikahan dan vendor pernikahan di Bali.
+                        Bergabung dengan organisasi profesional di Lombok untuk pengusaha industri pernikahan yaitu (Lombok
+                        Wedding Association) pada tahun 2019, dengan kemampuan kami untuk melakukan pernikahan internasional
+                        atau nasional telah diakui oleh sebagian besar tempat pernikahan dan vendor pernikahan di Lombok.
                         <br>
-                        ali Top Wedding Planner di dukung dengan anggota tim yang kreatif, bersemangat, dan berpengalaman.
+                        Wedding Organizer Black Sweet di dukung dengan anggota tim yang kreatif, bersemangat, dan
+                        berpengalaman.
                         Tim kami dengan senang hati selalu membantu anda untuk menghilangkan stres dalam memilih tema
                         pernikahan, tempat terbaik, atau lebih jauh untuk akhirnya memastikan acara yang akan selalu diingat
                         untuk satu moment terindah anda
@@ -74,34 +76,36 @@
 
         </div>
     </section><!-- End About Section -->
-       <section id="about" class="about">
-            <div class="container" data-aos="fade-up">
-                <div class="row">
-                    <div class="container" data-aos="fade-up">
-                        <div class="section-title">
-                            <h2>Testimonial</h2>
-                            <p>Kesan dan Testimonial</p>
-                        </div>
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+                <div class="container" data-aos="fade-up">
+                    <div class="section-title">
+                        <h2>Testimonial</h2>
+                        <p>Kesan dan Testimonial</p>
                     </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
 
-                        <h5 class="fst-italic"> Audi & Dara</h5>
-                        <p>
-                            Dear Bali Top Wedding,makasi banget kemarin pesta saya sukses sekali. Dekorasinya juga bagus.
-                            Wedding planning service pada saat saya wedding sangat memuaskan. Plannernya terutama mba Dewi dan
-                            Mba Aya sangat membantu dan baik banget. overall saya sangat suka service Bali top. Plannernya pada
-                            ramah2 dan servicenya sangat bagus. Saya bakal recommendasi ke beberapa bali wedding group yg saya
-                            ikutin dan post photo saya. Semoga sukses!
-                        </p>
-                    </div>
-                    <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="about-img">
-                            <img src="assets_landingpage/img/about.jpg" alt="">
-                        </div>
+                    <h5 class="fst-italic"> Audi & Dara</h5>
+                    <p>
+                        Wedding Organizer Black Sweet,makasi banget kemarin pesta saya sukses sekali. Dekorasinya juga
+                        bagus.
+                        Wedding planning service pada saat saya wedding sangat memuaskan. Plannernya terutama mba Dewi dan
+                        Mba Aya sangat membantu dan baik banget. overall saya sangat suka service Wedding Organizer Black
+                        Sweet. Plannernya pada
+                        ramah2 dan servicenya sangat bagus. Saya bakal recommendasi ke beberapa bali wedding group yg saya
+                        ikutin dan post photo saya. Semoga sukses!
+                    </p>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="about-img">
+                        <img src="assets_landingpage/img/audi&dara.jpg" alt="">
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
     <!-- ======= Chefs Section ======= -->
     <section id="chefs" class="chefs">
@@ -116,10 +120,10 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="assets_landingpage/img/chefs/chefs-1.jpg" class="img-fluid" alt="">
+                        <img src="assets_landingpage/img/chefs/juna.jpg" class="img-fluid" alt="">
                         <div class="member-info">
                             <div class="member-info-content">
-                                <h4>Walter White</h4>
+                                <h4>Chef Juna</h4>
                                 <span>Master Chef</span>
                             </div>
                             <div class="social">
@@ -134,10 +138,10 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="member" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="assets_landingpage/img/chefs/chefs-2.jpg" class="img-fluid" alt="">
+                        <img src="assets_landingpage/img/chefs/Renata.jpg" class="img-fluid" alt="">
                         <div class="member-info">
                             <div class="member-info-content">
-                                <h4>Sarah Jhonson</h4>
+                                <h4>Chef Renata</h4>
                                 <span>Patissier</span>
                             </div>
                             <div class="social">
@@ -151,10 +155,10 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="assets_landingpage/img/chefs/chefs-1.jpg" class="img-fluid" alt="">
+                        <img src="assets_landingpage/img/chefs/arnold1.jpg" class="img-fluid" alt="">
                         <div class="member-info">
                             <div class="member-info-content">
-                                <h4>Walter White</h4>
+                                <h4>Chef Arnold</h4>
                                 <span>Master Chef</span>
                             </div>
                             <div class="social">
@@ -168,42 +172,7 @@
                 </div>
 
             </div>
-            <div class="row ">
-                <div class="col-lg-4 col-md-6">
-                    <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="assets_landingpage/img/chefs/chefs-1.jpg" class="img-fluid" alt="">
-                        <div class="member-info">
-                            <div class="member-info-content">
-                                <h4>Walter White</h4>
-                                <span>Master Chef</span>
-                            </div>
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="assets_landingpage/img/chefs/chefs-1.jpg" class="img-fluid" alt="">
-                        <div class="member-info">
-                            <div class="member-info-content">
-                                <h4>Walter White</h4>
-                                <span>Master Chef</span>
-                            </div>
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </section><!-- End Chefs Section -->
 @endsection
