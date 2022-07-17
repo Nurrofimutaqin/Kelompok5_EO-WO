@@ -17,10 +17,10 @@
                     @if (!empty(Auth::user()))
                         <input type="date" id="tgl_booking" name="tgl_booking" class="form-control"
                             placeholder="TTTT-BB-HH">
-                            <br/>
+                        <br />
                         <input type="hidden" id="id_paket" name="id_paket" value="{{ $idPaket }}">
                         <button class="btn btn-primary" id="btn_cek">Cek Data</button>
-                        <br/>
+                        <br />
                     @endif
                 </div>
                 <div class="col">
@@ -33,18 +33,17 @@
                         <h2><a class="nav-link scrollto" href="{{ route('landing-login') }}">Login Dulu!</a></h2>
                     </div>
                 @endif
-               
+
                 @foreach ($allData as $d)
-               
                     <div class="col-lg-4 col-md-6 mb-5">
-                    <br/> <br/>
+                        <br /> <br />
                         <div class="member" data-aos="zoom-in" data-aos-delay="100">
                             <img src="{{ asset('image/' . $d->foto) }}" alt="" height="400px">
                             <div class="member-info">
                                 <div class="member-info-content">
                                     <h2>{{ $d->nama_paketDetail }}</h2>
                                     <h4>Harga :</h4>
-                                    <span>Rp. {{ $d->harga }}
+                                    <span>Rp.{{ number_format($d->harga, 0, ',', '.') }}
                                         {{-- {{ $d->id }} --}}
                                     </span>
                                     <h4>Fasilitas :</h4>
@@ -86,19 +85,16 @@
 
                         let data_swiper = "";
                         for (let x in data) {
-                            data_swiper += `<div class="col-lg-4 col-md-6 mb-5"><br/>
-                                                <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                                                    <img src="{{ asset('image/background.jpg') }}" alt="" height="400px">
-                                                    <div class="member-info">
-                                                        <div class="member-info-content">
-                                                            <h2>${data[x]['nama_paketDetail']}</h2>
-                                                            <h4>Harga :</h4>
-                                                            <span> ${data[x]['harga']} </span> <br>
-                                                            <h4>Fasilitas :</h4>
-                                                           <p> ${data[x]['deskripsi']} </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                            data_swiper += `<div class="col-lg-4 mt-4 mt-lg-0">
+                                             <section id="why-us" class="why-us">
+                                                <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                                                <span>${data[x]['nama_paketDetail']}</span>
+                                                <h4>Rp. ${data[x]['harga']}</h4>
+                                                <p>${data[x]['deskripsi']}</p>
+
+                                            </div>
+
+
                                                 <center>
                                                      <form action="{{ route('booking-store') }}" method="post" role="form" class="php-email-form">
                                                        @csrf
@@ -108,11 +104,12 @@
                                                             <input type="hidden" class="form-control" name="id" value="${data[x]['id']}">
                                                         </div>
                                                         <br/>
-                                                        
+
                                                         <button class="btn1 scrollto" type="submit">Booking Paket</button>
                                                     </form>
                                                 </center>
-                                            </div> `;
+                                            </div>
+                                            </section> `;
                         }
                         // console.log(data_swiper)
                         $('#isi_swiper').html('');

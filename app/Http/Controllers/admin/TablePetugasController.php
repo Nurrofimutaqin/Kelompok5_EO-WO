@@ -107,7 +107,6 @@ class TablePetugasController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'password' => 'required',
             'jenis_kelamin' => 'required',
             'role' => 'required',
         ]);
@@ -115,13 +114,27 @@ class TablePetugasController extends Controller
         $User = User::findOrFail($id);
         // dd($request->all());
 
-        $User->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request['password']),
-            'jenis_kelamin' => $request->jenis_kelamin,
-            'role' => $request->role,
-        ]);
+        if ($request->password) {
+            $request->validate([
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+            ]);
+            $User->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'role' => $request->role,
+            ]);
+        } else {
+            $User->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'role' => $request->role,
+            ]);
+        }
+
+
 
         //$tablePaket->update($User);
 

@@ -35,12 +35,15 @@
                   @if (empty(Auth::user()))
                       <li><a class="nav-link scrollto" href="{{ route('landing-login') }}">Login</a></li>
                       <li><a class="nav-link scrollto" href="{{ route('landing-register') }}">Register</a></li>
+                  @elseif (!empty(Auth::user()))
+                      <li><a class="nav-link scrollto" href="{{ route('booking') }}">Boking</a></li>
                   @endif
               </ul>
               <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
           @if (!empty(Auth::user()))
-              <a href="{{ route('logout') }}" onclick="event.preventDefault();
+              <a href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"
                   class="book-a-table-btn scrollto d-none d-lg-flex">Logout</a>
 

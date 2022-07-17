@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use PDF;
+use phpDocumentor\Reflection\Location;
 
 class TablePaketController extends Controller
 {
@@ -190,12 +191,19 @@ class TablePaketController extends Controller
     {
 
         $data = [
-            'title' => 'Welcome to Blacksweet EO/WO.com',
+            'title' => 'Surat Pengajuan Paket Blacksweet EO/WO',
             'date' => date('m/d/Y'),
         ];
 
         $pdf = PDF::loadView('admin/paketpdf', $data);
 
         return $pdf->download('suratacc.pdf');
+        return redirect()->route('tabel-paket.create')
+            ->with('success');
+    }
+
+    public function proses()
+    {
+        return view('admin.proses');
     }
 }

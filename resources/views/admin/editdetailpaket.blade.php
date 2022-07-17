@@ -38,7 +38,8 @@
                         </div>
                         <div class="form-group">
                             <strong>Harga:</strong>
-                            <input type="text" name="harga" value="{{ $detail->harga }}" class="form-control">
+                            <input type="text" name="harga"
+                                value="Rp.{{ number_format($detail->harga, 0, ',', '.') }}" class="form-control">
                         </div>
                         <div class="form-group">
                             <strong>Deskripsi :</strong>

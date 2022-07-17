@@ -130,7 +130,7 @@
                             <td> {{ $d->nama_paket }} </td>
                             <td> {{ $d->nama_paketDetail }} </td>
                             <td> {{ $d->deskripsi }} </td>
-                            <td> {{ $d->harga }} </td>
+                            <td> Rp.{{ number_format($d->harga, 0, ',', '.') }} </td>
                             <td><img src="{{ asset('image/' . $d->foto) }}" class="img-thumbnail" alt=""
                                     style="height: 100px;"></td>
                             <td>

@@ -54,6 +54,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('tabel-paket', TablePaketController::class);
     Route::get('/paket-delete/{id}', [TablePaketController::class, 'destroy']);
     Route::get('paket-pdf', [TablePaketController::class, 'generatePDF']);
+    Route::get('paket-proses', [TablePaketController::class, 'proses']);
 });
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('table-paketdetail', tableDetailController::class);
