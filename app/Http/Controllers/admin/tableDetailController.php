@@ -59,8 +59,8 @@ class tableDetailController extends Controller
         //
         $request->validate([
             'id_paket' => 'required',
-            'nama_paketDetail' => 'required',
-            'harga' => 'required',
+            'nama_paketDetail' => 'required|alpha',
+            'harga' => 'required|numeric',
             'deskripsi' => 'required',
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
@@ -119,10 +119,10 @@ class tableDetailController extends Controller
 
         $request->validate([
             'id_paket' => 'required',
-            'nama_paketDetail' => 'required',
-            'harga' => 'required',
+            'nama_paketDetail' => 'required|alpha',
+            'harga' => 'required|numeric',
             'deskripsi' => 'required',
-            'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $input = DetailPaket::findOrFail($id);

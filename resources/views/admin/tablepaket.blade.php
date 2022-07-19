@@ -2,7 +2,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            Paket
+            <center><h1>Table Paket</h1></center>
         </div>
         <div class="card-body">
             <a href="{{ url('paket-pdf') }}" type="button" class="btn btn-outline-primary">

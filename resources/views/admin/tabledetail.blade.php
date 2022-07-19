@@ -2,7 +2,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            Paket
+            <center><h1>Table Paket Detail</h1></center>
         </div>
         <div class="card-body">
 
@@ -19,7 +19,7 @@
                         <div class="modal-content modal-dialog-scrollable">
                             <div class="modal-header bg-primary">
                                 <h5 class="modal-title white" id="myModalLabel160">
-                                    Tambah Paket
+                                    Tambah Detail Paket
                                 </h5>
                                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                     <i data-feather="x"></i>
@@ -43,7 +43,7 @@
 
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12">
-                                        <div class="form-group">
+                                        <div class="form-group mx-4 mt-3">
                                             <strong>Nama Paket:</strong>
                                             <select class="form-control" name="id_paket">
                                                 <option value="">-- Pilih paket--</option>

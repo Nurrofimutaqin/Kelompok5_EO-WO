@@ -14,7 +14,7 @@
                     <div class="col-lg-6 menu-item filter-starters">
                         <div class="menu-content">
                             <a href="#">{{ $d->DetailPaket->nama_paketDetail }} &nbsp;
-                                {{ $d->DetailPaket->Paket->nama_paket }}</a><span>Rp.
+                                {{ $d->DetailPaket->Paket->nama_paket }}</a><span>
                                 Rp.{{ number_format($d->DetailPaket->harga, 0, ',', '.') }}</span>
 
                         </div>
