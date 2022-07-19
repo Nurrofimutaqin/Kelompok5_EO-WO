@@ -45,6 +45,7 @@ class TableBookingController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -56,6 +57,8 @@ class TableBookingController extends Controller
     public function show($id)
     {
         //
+        $booking = Booking::find($id);
+        return view('admin.detailbooking', compact('booking'));
     }
 
     /**

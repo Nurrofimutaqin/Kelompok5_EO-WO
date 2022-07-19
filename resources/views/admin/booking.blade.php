@@ -27,8 +27,13 @@
                         <td> {{ $d->status }} </td>
                         <td><img src="{{ asset('image/' . $d->bukti_bayar) }}" class="img-thumbnail" alt=""
                                 style="height: 100px;"></td>
-                        <td><a href="/booking-delete/{{ $d->id }}" class="btn btn-danger ml-1 delete-confirm"
-                                role="button">Batalkan Pesanan</a></td>
+                        <td><a href="{{ route('tabel-booking.show', $d->id) }}" type="button"
+                                    class="btn btn-outline-primary">
+                                    detail
+                                </a>
+                            <a href="/booking-delete/{{ $d->id }}" class="btn btn-danger ml-1 delete-confirm"
+                                role="button">Batalkan Pesanan</a>
+                            </td>
                     </tr>
                 @endforeach
             </tbody>
