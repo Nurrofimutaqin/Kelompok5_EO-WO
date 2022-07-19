@@ -35,11 +35,11 @@
                   <div class="col-lg-3 col-md-6 footer-links">
                       <h4>Our Services</h4>
                       <ul>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Wedding</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Tunangan</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Birthday</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Akad</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Event Party</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/paket-detail/42') }}">Wedding</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/paket-detail/44') }}">Tunangan</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/paket-detail/45') }}">Birthday</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/paket-detail/43') }}">Akad</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/paket-detail/46') }}">Event Party</a></li>
                       </ul>
                   </div>
 
