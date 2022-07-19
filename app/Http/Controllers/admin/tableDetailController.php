@@ -85,9 +85,12 @@ class tableDetailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        $deskripsi = DetailPaket::findOrFail($request->id);
+        return view('landingpage.deskripsidetailpaket', [
+            'desk' => $deskripsi
+        ]);
     }
 
     /**
@@ -122,7 +125,7 @@ class tableDetailController extends Controller
             'nama_paketDetail' => 'required|alpha',
             'harga' => 'required|numeric',
             'deskripsi' => 'required',
-            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $input = DetailPaket::findOrFail($id);

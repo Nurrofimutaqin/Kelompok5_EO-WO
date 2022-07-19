@@ -40,18 +40,22 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        $tgl_booking = $request->tgl_booking;
-        $idPaket = $request->id;
+        if (Auth()) {
+            $tgl_booking = $request->tgl_booking;
+            $idPaket = $request->id;
 
-        Booking::create([
-            'id_paketDetail' => $idPaket,
-            'id_user' => Auth()->id(),
-            'tgl_booking' => $tgl_booking,
-            'status' => 'belum bayar',
-        ]);
+            Booking::create([
+                'id_paketDetail' => $idPaket,
+                'id_user' => Auth()->id(),
+                'tgl_booking' => $tgl_booking,
+                'status' => 'belum bayar',
+            ]);
 
-        return redirect()->route('booking')
-            ->with('success', 'Booking created successfully.');
+            return redirect()->route('booking')
+                ->with('success', 'Booking created successfully.');
+        } else {
+            return route('landing-login');
+        }
     }
 
     /**

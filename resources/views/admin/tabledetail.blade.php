@@ -2,7 +2,9 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <center><h1>Table Paket Detail</h1></center>
+            <center>
+                <h1>Table Paket Detail</h1>
+            </center>
         </div>
         <div class="card-body">
 
@@ -69,7 +71,7 @@
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group mx-4 mt-3">
                                             <strong>Deskripsi :</strong>
-                                            <textarea type="text" name="deskripsi" class="form-control" placeholder="Deskripsi"></textarea>
+                                            <textarea type="textarea" name="deskripsi" class="form-control" placeholder="Deskripsi"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -129,7 +131,7 @@
                             <td> {{ $no++ }} </td>
                             <td> {{ $d->nama_paket }} </td>
                             <td> {{ $d->nama_paketDetail }} </td>
-                            <td> {{ $d->deskripsi }} </td>
+                            <td style="width: 25%"> {{ $d->deskripsi }} </td>
                             <td> Rp.{{ number_format($d->harga, 0, ',', '.') }} </td>
                             <td><img src="{{ asset('image/' . $d->foto) }}" class="img-thumbnail" alt=""
                                     style="height: 100px;"></td>

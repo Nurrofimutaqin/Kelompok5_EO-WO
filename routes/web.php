@@ -56,6 +56,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('paket-pdf', [TablePaketController::class, 'generatePDF']);
     Route::get('paket-proses', [TablePaketController::class, 'proses']);
 });
+Route::post('/detail-deskripsi', [tableDetailController::class, 'show'])->name('deskripsi');
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('table-paketdetail', tableDetailController::class);
     Route::get('/detail-delete/{id}', [tableDetailController::class, 'destroy']);
