@@ -2,8 +2,8 @@
 @section('content')
     <section id="menu" class="menu section-bg">
         <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
+            <br>
+            <div class="section-title mt-5">
                 <h2>Booking</h2>
                 <p>Check Our Booking </p>
             </div>
@@ -19,8 +19,8 @@
 
                         </div>
                         <div class="menu-ingredients">
-                            {{ $d->status }}
-
+                            Tanggal Booking: {{ $d->tgl_booking }}<br>
+                            Status: {{ $d->status }}
                         </div>
                     </div>
 
