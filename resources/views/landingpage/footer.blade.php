@@ -7,9 +7,8 @@
                       <div class="footer-info">
                           <h3>Black Sweet</h3>
                           <p>
-                              Jln. Ciputat Raya DKI Jakarta <br>
-                              NY 535022, INA<br><br>
-                              <strong>Phone:</strong> +1 5589 55488 55<br>
+                              Jln. Ciputat Raya DKI Lombok <br> INA<br><br>
+                              <strong>Phone:</strong> 0856 9711 3324<br>
                               <strong>Email:</strong> BlackSweet@gmail.com<br>
                           </p>
                           <div class="social-links mt-3">
@@ -25,11 +24,11 @@
                   <div class="col-lg-2 col-md-6 footer-links">
                       <h4>Useful Links</h4>
                       <ul>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Catalog</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Detail Of Catalog</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/home') }}">Home</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/about') }}">About us</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/catalog-paket') }}">Catalog</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/gallerry') }}">Gallery Testimoni</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/contact') }}">Contact</a></li>
                       </ul>
                   </div>
 

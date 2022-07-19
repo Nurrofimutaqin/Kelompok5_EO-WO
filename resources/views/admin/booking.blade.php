@@ -2,7 +2,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            Booking
+            <center><h1>Table Transaksi</h1></center>
         </div>
         @php
             $no = 1;

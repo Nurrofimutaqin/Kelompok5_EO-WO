@@ -42,7 +42,9 @@
 
         <div class="btns">
             <a href="/catalog-paket" class="btn-menu animated fadeInUp scrollto">Catalog</a>
-            <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Booking</a>
+            @if (!empty(Auth::user()))
+            <a href="{{ route('booking') }}" class="btn-book animated fadeInUp scrollto">Booking</a>
+            @endif
         </div>
     </div>
 

@@ -47,11 +47,11 @@ class TablePetugasController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'password' => 'required',
+            'name' => 'required|alpha',
+            'email' => 'required|email',
+            'password' => 'required|min:10',
             'jenis_kelamin' => 'required',
-            'role' => 'required',
+            'role' => 'required|alpha',
 
         ]);
         User::create([
@@ -106,9 +106,11 @@ class TablePetugasController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:10',
             'jenis_kelamin' => 'required',
-            'role' => 'required',
+            'role' => 'required|alpha',
+
         ]);
 
         $User = User::findOrFail($id);

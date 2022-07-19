@@ -3,7 +3,7 @@
     <div class="card">
         <div class="card-header">
             <center>
-                <H2>EDIT User</H2>
+                <H2>EDIT USER</H2>
             </center>
         </div>
         <div class="card-body">
@@ -18,7 +18,7 @@
 
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
+                        <div class="form-group mx-4 mt-3">
                             <strong>Nama:</strong>
                             <input type="text" name="name" value="{{ $User->name }}" class="form-control">
                         </div>

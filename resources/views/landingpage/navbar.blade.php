@@ -3,15 +3,8 @@
       <div class="container d-flex justify-content-center justify-content-md-between">
 
           <div class="contact-info d-flex align-items-center">
-              <i class="bi bi-phone d-flex align-items-center"><span>+1 5589 55488 55</span></i>
-              <i class="bi bi-clock d-flex align-items-center ms-4"><span> Mon-Sat: 11AM - 23PM</span></i>
-          </div>
-
-          <div class="languages d-none d-md-flex align-items-center">
-              <ul>
-                  <li>En</li>
-                  <li><a href="#">De</a></li>
-              </ul>
+              <i class="bi bi-phone d-flex align-items-center"><span>0856 9711 3324</span></i>
+              <i class="bi bi-clock d-flex align-items-center ms-4"><span> Mon-Sat: 08AM - 06PM</span></i>
           </div>
       </div>
   </div>
@@ -36,7 +29,7 @@
                       <li><a class="nav-link scrollto" href="{{ route('landing-login') }}">Login</a></li>
                       <li><a class="nav-link scrollto" href="{{ route('landing-register') }}">Register</a></li>
                   @elseif (!empty(Auth::user()))
-                      <li><a class="nav-link scrollto" href="{{ route('booking') }}">Boking</a></li>
+                      <li><a class="nav-link scrollto" href="{{ route('booking') }}">Booking</a></li>
                   @endif
               </ul>
               <i class="bi bi-list mobile-nav-toggle"></i>

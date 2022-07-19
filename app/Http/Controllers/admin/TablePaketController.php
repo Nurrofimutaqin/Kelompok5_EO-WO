@@ -53,7 +53,7 @@ class TablePaketController extends Controller
     {
         //
         $request->validate([
-            'nama_paket' => 'required',
+            'nama_paket' => 'required|alpha',
             'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $input = $request->all();
@@ -124,7 +124,7 @@ class TablePaketController extends Controller
     {
 
         $request->validate([
-            'nama_paket' => 'required',
+            'nama_paket' => 'required|alpha',
             'logo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
