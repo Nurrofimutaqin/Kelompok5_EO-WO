@@ -1,28 +1,30 @@
 @extends('landingpage.index')
 @section('content')
-    <div class="container" data-aos="fade-up">
-        <div class="section-title">
-            <h2>Detail Paket</h2>
-            <p>Detail Paket</p>
+    <div class="container mt-5" data-aos="fade-up">
+    <br><br>
+        <div class="section-title mt-5">
+            <p>Detail Paket {{ $desk->nama_paketDetail }}</p>
         </div>
-
-        <div class="row">
-            <section id="why-us" class="why-us">
-                <div class="col-lg-8 mt-4 mt-lg-0">
-
-                    <div class="box" data-aos="zoom-in" data-aos-delay="100">
-                        <span>Deskripsi</span><br/>
-                        
-                        <img src="{{ asset('image/' . $desk->foto) }}" alt="" height="400px"> <br> <br>
-                        <h4>{{ $desk->nama_paketDetail }}</h4>
-                        <h4>Rp. &nbsp; {{ number_format($desk->harga, 0, ',', '.') }}</h4>
-                        <p>{{ $desk->deskripsi }}</p> <br>
-                        <a href="{{ route('paketDetail', $desk->id_paket) }}" class="btn btn-danger">Back</a>
-
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+                <div class="container" data-aos="fade-up">
+                    <div class="section-title">
+                        <h2>Deskripsi {{ $desk->nama_paketDetail }}</h2>
                     </div>
                 </div>
-            </section>
-
+                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                    <br><br>
+                        <p>{{ $desk->deskripsi }}</p>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="about-img">
+                        <img src="{{ asset('image/' . $desk->foto) }}" alt="" height="400px"> 
+                        
+                        <center><h4>Rp. &nbsp; {{ number_format($desk->harga, 0, ',', '.') }}</h4></center>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 @endsection

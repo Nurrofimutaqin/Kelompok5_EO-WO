@@ -9,7 +9,7 @@
             </div>
 
             @foreach ($Booking as $d)
-                <div class="row " data-aos="fade-up" data-aos-delay="200">
+                <div class="row" data-aos="fade-up" data-aos-delay="200">
 
                     <div class="col-lg-6 menu-item filter-starters">
                         <div class="menu-content">

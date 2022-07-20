@@ -25,7 +25,7 @@
                 <div class="col">
                 </div>
             </div>
-
+            
             <div class="row" id="isi_swiper">
 
                 @foreach ($allData as $d)
