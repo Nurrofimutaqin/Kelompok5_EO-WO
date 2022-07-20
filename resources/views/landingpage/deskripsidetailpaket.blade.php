@@ -11,12 +11,12 @@
                 <div class="col-lg-8 mt-4 mt-lg-0">
 
                     <div class="box" data-aos="zoom-in" data-aos-delay="100">
-                        <span>Deskripsi</span>
+                        <span>Deskripsi</span><br/>
+                        
+                        <img src="{{ asset('image/' . $desk->foto) }}" alt="" height="400px"> <br> <br>
                         <h4>{{ $desk->nama_paketDetail }}</h4>
                         <h4>Rp. &nbsp; {{ number_format($desk->harga, 0, ',', '.') }}</h4>
                         <p>{{ $desk->deskripsi }}</p> <br>
-
-                        <img src="{{ asset('image/' . $desk->foto) }}" alt="" height="400px"> <br> <br>
                         <a href="{{ route('paketDetail', $desk->id_paket) }}" class="btn btn-danger">Back</a>
 
                     </div>
