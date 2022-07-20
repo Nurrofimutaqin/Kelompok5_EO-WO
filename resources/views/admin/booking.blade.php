@@ -4,10 +4,11 @@
         <div class="card-header">
             <center><h1>Table Transaksi</h1></center>
         </div>
+        <div class="card-body">
         @php
             $no = 1;
         @endphp
-        <table class="table table-striped" id="datatable1">
+        <table class="table table-striped mq-5" id="datatable1">
             <thead>
                 <tr>
                     <th>No</th>
@@ -38,5 +39,6 @@
                 @endforeach
             </tbody>
         </table>
+        </div>
     </div>
 @endsection

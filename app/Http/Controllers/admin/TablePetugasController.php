@@ -107,7 +107,6 @@ class TablePetugasController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'password' => 'required|min:10',
             'jenis_kelamin' => 'required',
             'role' => 'required|alpha',
 
@@ -118,7 +117,7 @@ class TablePetugasController extends Controller
 
         if ($request->password) {
             $request->validate([
-                'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'password' => ['required', 'string', 'min:10', 'confirmed'],
             ]);
             $User->update([
                 'name' => $request->name,
