@@ -4,7 +4,7 @@
 
           <div class="contact-info d-flex align-items-center">
               <i class="bi bi-phone d-flex align-items-center"><span>0856 9711 3324</span></i>
-              <i class="bi bi-clock d-flex align-items-center ms-4"><span> Mon-Sat: 08AM - 06PM</span></i>
+              <i class="bi bi-clock d-flex align-items-center ms-4"><span> Senin-Sabtu: 08AM - 06PM</span></i>
           </div>
       </div>
   </div>

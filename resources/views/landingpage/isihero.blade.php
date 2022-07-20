@@ -38,7 +38,7 @@
 @else
     <div class="col-lg-8">
         <h1>Welcome to <span>Blacksweet</span></h1>
-        <h2>Event & Wedding Organizer No.1 In The World!</h2>
+        <h2>Event & Wedding Organizer No.1 Sepulau Lombok</h2>
 
         <div class="btns">
             <a href="/catalog-paket" class="btn-menu animated fadeInUp scrollto">Catalog</a>
@@ -50,7 +50,7 @@
 
     <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in"
         data-aos-delay="200">
-        <a href="https://youtu.be/xyUCPMciea8" class="glightbox play-btn"></a>
+        <a href="https://www.youtube.com/watch?v=6vGoiL75K8k" class="glightbox play-btn"></a>
     </div>
 @endif
 

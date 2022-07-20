@@ -25,15 +25,15 @@
                         <div class="address">
                             <i class="bi bi-geo-alt"></i>
                             <h4>Location:</h4>
-                            <p>Jln. Ciputat Raya, DKI Jakarta, NY 535022</p>
+                            <p>Jln. Gatot Subroto, Lombok Barat, Nusa Teanggara Barat</p>
                         </div>
 
                         <div class="open-hours">
                             <i class="bi bi-clock"></i>
                             <h4>Open Hours:</h4>
                             <p>
-                                Monday-Saturday:<br>
-                                09:00 AM - 22:00 PM
+                                Senin-Sabtu:<br>
+                                08:00 AM - 06:00 PM
                             </p>
                         </div>
 
@@ -46,7 +46,7 @@
                         <div class="phone">
                             <i class="bi bi-phone"></i>
                             <h4>Call:</h4>
-                            <p>+62 858 4724 6544</p>
+                            <p>+62 856 9711 3324</p>
                         </div>
 
                     </div>

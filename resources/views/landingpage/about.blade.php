@@ -94,7 +94,7 @@
                         Wedding planning service pada saat saya wedding sangat memuaskan. Plannernya terutama mba Dewi dan
                         Mba Aya sangat membantu dan baik banget. overall saya sangat suka service Wedding Organizer Black
                         Sweet. Plannernya pada
-                        ramah2 dan servicenya sangat bagus. Saya bakal recommendasi ke beberapa bali wedding group yg saya
+                        ramah2 dan servicenya sangat bagus. Saya bakal recommendasi ke beberapa Lombok wedding group yg saya
                         ikutin dan post photo saya. Semoga sukses!
                     </p>
                 </div>
